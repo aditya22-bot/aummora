@@ -9,4 +9,6 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.html',
   styleUrls: ['./app.scss']
 })
-export class AppComponent {}
+export class AppComponent {
+  
+}
