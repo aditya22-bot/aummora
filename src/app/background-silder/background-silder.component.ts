@@ -12,8 +12,9 @@ import { Products } from '../products/products';
 export class BackgroundSilder implements OnInit {
 
   images = [
+    'assets/images/page1.jpg',
   'assets/images/page2.jpg',
-  // 'assets/images/page3.jpg',
+  'assets/images/page3.jpg',
   'assets/images/page4.jpg'
 ];
 
