@@ -12,9 +12,10 @@ import { Products } from '../products/products';
 export class BackgroundSilder implements OnInit {
 
   images = [
-  'assets/images/cotton1.jpg',
-  'assets/images/cotton2.jpg',
-  'assets/images/cotton3.jpg'
+    'assets/images/page1.jpg',
+  'assets/images/page2.jpg',
+  'assets/images/page3.jpg',
+  'assets/images/page4.jpg'
 ];
 
   currentIndex = signal(0);

@@ -5,12 +5,13 @@
 /tmp
 /out-tsc
 /bazel-out
-.vscode
 # Node
 /node_modules
 npm-debug.log
 yarn-error.log
 
+/.vscode
+/.angular
 # IDEs and editors
 .idea/
 .project
