@@ -1,0 +1,101 @@
+.footer-container {
+  background: #2d2d2d;
+  color: white;
+  padding: 50px 5%;
+  position: relative;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 260px;
+}
+
+.footer-column h3 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.footer-column p,
+.footer-column a {
+  color: #dcdcdc;
+  line-height: 1.7;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  font-size: 26px;
+}
+
+.social-icons a {
+  color: white;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #aaaaaa;
+}
+
+/* Newsletter */
+.newsletter input {
+  width: 100%;
+  padding: 12px;
+  background: #bcbcbc;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.newsletter button {
+  padding: 12px 32px;
+  border: none;
+  border-radius: 50px;
+  background: white;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.newsletter button:hover {
+  background: #e2e2e2;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  text-align: center;
+  line-height: 1.6;
+  color: #dcdcdc;
+  font-size: 15px;
+}
+
+/* WhatsApp floating button */
+.whatsapp-btn {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  background: #25d366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.whatsapp-btn img {
+  width: 32px;
+  height: 32px;
+}

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
+import { Footer } from '../footer/footer';
 @Component({
   selector: 'app-products',
-  imports: [CommonModule],
+  imports: [CommonModule,Footer],
   templateUrl: './products.html',
   styleUrl: './products.scss',
 })
