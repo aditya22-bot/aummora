@@ -72,3 +72,213 @@
     align-items: center;
   }
 }
+
+
+
+
+.choose-us {
+  padding: 60px 6%;
+  background: #f9faf9;
+  text-align: center;
+}
+
+.choose-us h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.choose-us .subtitle {
+  color: #666;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+.choose-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.choose-box {
+  padding: 20px 15px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.choose-box img {
+  width: 55px;
+  margin-bottom: 15px;
+}
+
+.choose-box h4 {
+  font-size: 1.2rem;
+  color: #00a651;
+  margin-bottom: 8px;
+}
+
+.choose-box p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.choose-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.13);
+}
+
+
+
+
+.global-reach {
+  padding: 70px 6%;
+  background: #ffffff;
+}
+
+.global-reach h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.global-reach .subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.reach-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.reach-map img {
+  width: 100%;
+  max-width: 550px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.reach-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.reach-text p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.reach-text ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.reach-text ul li {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.reach-text ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-size: 1.3rem;
+  color: #00a651;
+  line-height: 1;
+}
+
+
+
+.cert-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.grid {
+  display: grid;
+  margin-top: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: .3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.icon {
+  font-size: 40px;
+  color: #0077b6;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.tagline {
+  color: gray;
+}
+
+.footer-text {
+  margin-top: 30px;
+  color: #555;
+  font-size: 14px;
+}
+
+
+.aumorra-why-chose-section {
+  padding: 40px 20px;
+}
+
+.choose-us {
+  text-align: center;
+}
+
+.choose-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.choose-box {
+  padding: 20px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: .3s ease;
+}
+
+.choose-box:hover {
+  transform: translateY(-5px);
+}
+
+.icon {
+  font-size: 48px;
+  color: #0077b6;
+  margin-bottom: 10px;
+}
