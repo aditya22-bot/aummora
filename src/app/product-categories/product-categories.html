@@ -1,0 +1,23 @@
+<section class="product-section">
+  <h2 class="title">OUR <span>PRODUCTS</span></h2>
+  <p class="subtitle">What We Offer</p>
+  <p class="sub-desc">
+    We deliver a wide range of products with strict quality checks, export-ready packaging, and
+    competitive pricing.
+  </p>
+
+  <div class="grid">
+    @for (category of categories; track category.title) {
+    <div class="card">
+      <img [src]="category.image" alt="{{ category.title }}" />
+
+      <h3 class="cat-title">{{ category.title }}</h3>
+      <p class="cat-desc">{{ category.desc }}</p>
+    </div>
+    }
+  </div>
+
+  <div class="btn-center">
+    <button class="view-btn" routerLink="/product-category">View All Products</button>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+<section class="services-wrapper">
+  <h2 class="title">🔶 SERVICES WE OFFER</h2>
+  <p class="subtitle">End-to-End Support for Buyers</p>
+
+  <div class="services-grid">
+    <div class="service-box" *ngFor="let service of services">
+      <mat-icon class="service-icon">{{ service.icon }}</mat-icon>
+      <h4>{{ service.title }}</h4>
+    </div>
+  </div>
+
+  <button class="view-btn" routerLink="/services">View All Services</button>
+</section>
+<div class="amurra-cta-section">
+  <app-cta-section></app-cta-section>
+</div>

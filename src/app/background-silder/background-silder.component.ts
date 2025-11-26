@@ -15,7 +15,8 @@ export class BackgroundSilder implements OnInit {
     'assets/images/page1.jpg',
   'assets/images/page2.jpg',
   'assets/images/page3.jpg',
-  'assets/images/page4.jpg'
+  'assets/images/page4.jpg',
+  'assets/images/page5.jpg',
 ];
 
   currentIndex = signal(0);

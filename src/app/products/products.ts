@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 import { Footer } from '../footer/footer';
 import { MatIconModule } from '@angular/material/icon';
+import { ServiceOffer } from '../service-offer/service-offer';
+import { ProductCategories } from '../product-categories/product-categories';
 
 @Component({
   selector: 'app-products',
-  imports: [CommonModule,Footer,MatIconModule ],
+  imports: [CommonModule,Footer,MatIconModule,ServiceOffer,ProductCategories],
   templateUrl: './products.html',
   styleUrl: './products.scss',
 })
