@@ -12,5 +12,20 @@ export const routes: Routes = [
     path: 'about',
     loadComponent: () =>
       import('./about/about').then(m => m.About)
+  },
+   {
+    path: 'contact-us',
+    loadComponent: () =>
+      import('./contact-us/contact-us').then(m => m.ContactUs)
+  },
+  {
+    path: 'products',
+    loadComponent: () =>
+      import('./product-categories/product-categories').then(m => m.ProductCategories)
+  },
+  {
+    path: 'careers',
+    loadComponent: () =>
+      import('./career/career').then(m => m.Career)
   }
 ];

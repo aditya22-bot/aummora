@@ -1,68 +1,10 @@
-@media (max-width: 768px) {
-  .aumorra-header {
-    padding: 10px 20px;
-
-    .container {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .logo {
-      margin-bottom: 10px;
-    }
-
-    .nav-links {
-      flex-direction: column;
-      gap: 15px;
-      width: 100%;
-    }
-
-    .nav-links a {
-      font-size: 14px;
-    }
-  }
-}
-@media (max-width: 768px) {
-  .aumorra-header {
-    padding: 10px 20px;
-
-    .container {
-      flex-direction: row;       /* Keep flex row */
-      flex-wrap: wrap;           /* Allow wrapping if needed */
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      margin-bottom: 0;          /* Remove margin so logo stays inline */
-    }
-
-    .nav-links {
-      flex-direction: row;       /* Keep nav horizontal */
-      flex-wrap: nowrap;         /* Don't wrap links */
-      gap: 15px;
-      overflow-x: auto;          /* Enable horizontal scroll on narrow screens */
-      -webkit-overflow-scrolling: touch;
-      width: auto;
-      scrollbar-width: none;     /* Optional: hide scrollbar */
-    }
-
-    .nav-links::-webkit-scrollbar {
-      display: none;             /* Optional: hide scrollbar */
-    }
-
-    .nav-links a {
-      font-size: 14px;
-      white-space: nowrap;       /* Prevent links from breaking into multiple lines */
-    }
-  }
-}
-.aumorra-header, .aumorra-header * {
+/* GLOBAL SAFETY */
+.aumorra-header,
+.aumorra-header * {
   box-sizing: border-box;
-   position: relative;
-  z-index: 9999;
 }
 
+/* HEADER */
 .aumorra-header {
   background-color: #ffffff;
   padding: 15px 60px;
@@ -70,103 +12,131 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+}
 
-  .container {
-    display: flex;
+/* CONTAINER */
+.aumorra-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+/* LOGO WRAPPER */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+/* AUMORRA */
+.logo .brand {
+  font-size: clamp(16px, 4vw, 24px);
+  font-weight: 700;
+  color: #0d2b55;
+  letter-spacing: 1px;
+}
+
+/* INTERNATIONAL */
+.logo .highlight {
+  font-size: clamp(13px, 3.2vw, 20px);
+  font-weight: 600;
+  color: #d3a233;
+}
+
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  color: #0d2b55;
+}
+
+/* ===================== */
+/* MOBILE RESPONSIVE */
+/* ===================== */
+@media (max-width: 768px) {
+  .aumorra-header {
+    padding: 10px 16px;
+  }
+
+  .aumorra-header .container {
+    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
   }
 
-  .logo {
-    display: flex;
-    align-items: baseline;
-    font-family: 'Poppins', sans-serif;
-
-    .brand {
-      font-size: 24px;
-      font-weight: 700;
-      color: #0d2b55; /* deep navy blue */
-      letter-spacing: 1px;
-    }
-
-    .highlight {
-      font-size: 20px;
-      font-weight: 600;
-      color: #d3a233; /* golden accent */
-      margin-left: 5px;
-    }
+  /* Logo scaling */
+  .logo .brand {
+    font-size: 20px;
   }
 
+  .logo .highlight {
+    font-size: 16px;
+  }
+
+  /* Horizontal scroll menu */
   .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+    gap: 16px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
 
-    a {
-      text-decoration: none;
-      color: #222;
-      font-weight: 500;
-      font-size: 16px;
-      transition: color 0.3s ease;
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
 
-      &:hover {
-        color: #0d2b55;
-      }
-      white-space: nowrap; /* keep links in one line */
-    }
-
-    .quote-btn {
-      background-color: #0d2b55;
-      color: #fff;
-      border: none;
-      padding: 8px 22px;
-      border-radius: 25px;
-      font-weight: 600;
-      font-size: 15px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-
-      &:hover {
-        background-color: #113873;
-        box-shadow: 0 4px 8px rgba(13, 43, 85, 0.2);
-      }
-    }
+  .nav-links a {
+    font-size: 14px;
   }
 }
 
-/* Updated mobile styles */
-@media (max-width: 768px) {
-  .aumorra-header {
-    padding: 10px 20px;
-
-    .container {
-      flex-direction: row;      /* keep logo and nav in one row */
-      flex-wrap: wrap;          /* allow wrapping if needed */
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      margin-bottom: 0;
-    }
-
-    .nav-links {
-      flex-direction: row;
-      flex-wrap: nowrap;
-      gap: 15px;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      width: auto;
-      scrollbar-width: none;
-    }
-
-    .nav-links::-webkit-scrollbar {
-      display: none;
-    }
-
-    .nav-links a {
-      font-size: 14px;
-      white-space: nowrap;
-    }
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+  .logo .brand {
+    font-size: 18px;
   }
+
+  .logo .highlight {
+    font-size: 14px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+}
+
+/* ACTIVE MENU LINK */
+.nav-links a.active {
+  color: #0d2b55;
+  font-weight: 600;
+  position: relative;
+}
+
+/* Underline animation */
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background-color: #d3a233;
+  border-radius: 2px;
 }

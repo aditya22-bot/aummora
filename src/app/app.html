@@ -6,14 +6,16 @@
     </div>
 
     <nav class="nav-links">
-      <a routerLink="/">Home</a>
-      <a routerLink="/about">About</a>
-      <a routerLink="/products">Products</a>
-      <a routerLink="/why-us">Why Us</a>
-      <a routerLink="/contact">Contact</a>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+        >Home</a
+      >
+
+      <a routerLink="/about" routerLinkActive="active">About</a>
+      <a routerLink="/products" routerLinkActive="active">Products</a>
+      <a routerLink="/careers" routerLinkActive="active">Careers</a>
+      <a routerLink="/contact-us" routerLinkActive="active">Contact</a>
     </nav>
   </div>
 </header>
 
-<!-- ONLY HOME PAGE SHOULD HAVE SLIDER -->
 <router-outlet></router-outlet>
