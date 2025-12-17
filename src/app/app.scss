@@ -1,142 +1,95 @@
-/* GLOBAL SAFETY */
-.aumorra-header,
-.aumorra-header * {
+/* ================= GLOBAL ================= */
+* {
   box-sizing: border-box;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 .aumorra-header {
-  background-color: #ffffff;
-  padding: 15px 60px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+background: #bdbdbd;
+    padding: 14px 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-/* CONTAINER */
+/* ================= CONTAINER ================= */
 .aumorra-header .container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;   /* ✅ allow wrapping */
 }
 
-/* LOGO WRAPPER */
 .logo {
   display: flex;
-  align-items: center;
-  gap: 6px;
-  white-space: nowrap;
+  align-items: baseline;
+  gap: 4px;
   max-width: 100%;
+  flex-wrap: wrap;        /* ✅ allow wrap */
 }
 
-/* AUMORRA */
 .logo .brand {
-  font-size: clamp(16px, 4vw, 24px);
+  font-size: clamp(14px, 5vw, 19px) !important;
   font-weight: 700;
   color: #0d2b55;
-  letter-spacing: 1px;
+  line-height: 1.1;
 }
 
-/* INTERNATIONAL */
 .logo .highlight {
-  font-size: clamp(13px, 3.2vw, 20px);
-  font-weight: 600;
-  color: #d3a233;
+ font-size: clamp(11px, 1vw, 15px) !important;
+    font-weight: 800;
+    color: #1713b3;
+    line-height: 1.1;
 }
 
 
-/* NAV LINKS */
+/* ================= NAV ================= */
 .nav-links {
   display: flex;
-  align-items: center;
-  gap: 30px;
+    align-items: center;
+    gap: 54px;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 1;
 }
 
 .nav-links a {
+  font-size: clamp(13px, 3.5vw, 16px);
   text-decoration: none;
   color: #222;
   font-weight: 500;
-  font-size: 16px;
-  transition: color 0.3s ease;
-  white-space: nowrap;
+  position: relative;
+  padding-bottom: 4px;
 }
 
-.nav-links a:hover {
-  color: #0d2b55;
-}
-
-/* ===================== */
-/* MOBILE RESPONSIVE */
-/* ===================== */
-@media (max-width: 768px) {
-  .aumorra-header {
-    padding: 10px 16px;
-  }
-
-  .aumorra-header .container {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  /* Logo scaling */
-  .logo .brand {
-    font-size: 20px;
-  }
-
-  .logo .highlight {
-    font-size: 16px;
-  }
-
-  /* Horizontal scroll menu */
-  .nav-links {
-    gap: 16px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .nav-links::-webkit-scrollbar {
-    display: none;
-  }
-
-  .nav-links a {
-    font-size: 14px;
-  }
-}
-
-/* EXTRA SMALL DEVICES */
-@media (max-width: 480px) {
-  .logo .brand {
-    font-size: 18px;
-  }
-
-  .logo .highlight {
-    font-size: 14px;
-  }
-
-  .nav-links a {
-    font-size: 13px;
-  }
-}
-
-/* ACTIVE MENU LINK */
+/* ACTIVE LINK */
 .nav-links a.active {
   color: #0d2b55;
   font-weight: 600;
-  position: relative;
 }
 
-/* Underline animation */
 .nav-links a.active::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -6px;
+  bottom: 0;
   width: 100%;
   height: 2px;
   background-color: #d3a233;
   border-radius: 2px;
+}
+
+/* ================= SMALL MOBILES ================= */
+@media (max-width: 480px) {
+  .aumorra-header .container {
+    flex-direction: column;   /* logo top, nav below */
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    justify-content: flex-start;
+    gap: 12px;
+  }
 }
