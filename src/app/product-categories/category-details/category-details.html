@@ -1,0 +1,16 @@
+<h2>Products</h2>
+
+<div class="product-container">
+  @for (item of products; track item.name) {
+    <div class="card">
+      <div class="image-box">
+        <img [src]="item.image" />
+      </div>
+
+      <div class="content">
+        <h3>{{ item.name }}</h3>
+        <p class="desc">Fresh and high quality product</p>
+      </div>
+    </div>
+  }
+</div>

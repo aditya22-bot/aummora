@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-categories',
@@ -7,33 +8,38 @@ import { Component } from '@angular/core';
   styleUrl: './product-categories.scss',
 })
 export class ProductCategories {
-categories = [
+  constructor(private router: Router) {}
+
+
+  categories = [
   {
-    name: 'Wheat',
-    date: 'Mar 28',
-    image: 'assets/images/products/catrgory1.jpg',
-    desc: 'High quality export wheat',
-    products: [
-      { name: 'Wheat Grade A', image: 'assets/images/products/catrgory1.jpg' },
-    ],
+    id: 'vegetables',
+    name: 'Fresh Vegetables',
+    image: 'assets/images/products/Food.png',
   },
   {
-    name: 'Turmeric',
-    date: 'Mar 28',
-    image: 'assets/images/products/category2.jpg',
-    desc: 'Organic turmeric powder',
-    products: [
-      { name: 'Turmeric Powder', image: 'assets/images/products/category2.jpg' },
-    ],
+    id: 'spices',
+    name: 'Spices',
+    image: 'assets/images/products/Food.png',
   },
   {
-    name: 'Tomatoes',
-    date: 'Mar 28',
-    image: 'assets/images/products/category3.jpg',
-    desc: 'Fresh farm tomatoes',
-    products: [
-      { name: 'Fresh Tomato', image: 'assets/images/products/category3.jpg' },
-    ],
+    id: 'fruits',
+    name: 'Fresh Fruits',
+    image: 'assets/images/products/Food.png',
+  },
+  {
+    id: 'dryfruits',
+    name: 'Dry Fruits',
+    image: 'assets/images/products/Food.png',
+  },
+  {
+    id: 'grains',
+    name: 'Grains & Staples',
+    image: 'assets/images/products/Food.png',
   },
 ];
+ goToCategory(id: string) {
+  this.router.navigate(['/category', id]);
 }
+}
+

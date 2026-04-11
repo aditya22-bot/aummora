@@ -1,6 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 import { HeadersComponent } from './aumora-dashbord/headers/headers';
 import { About } from './about/about';
+import { CategoryDetails } from './product-categories/category-details/category-details';
 
 export const routes: Routes = [
   {
@@ -27,5 +28,6 @@ export const routes: Routes = [
     path: 'careers',
     loadComponent: () =>
       import('./career/career').then(m => m.Career)
-  }
+  },
+  { path: 'category/:id', component: CategoryDetails }
 ];
