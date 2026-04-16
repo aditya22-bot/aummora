@@ -15,27 +15,27 @@ export class ProductCategories {
   {
     id: 'vegetables',
     name: 'Fresh Vegetables',
-    image: 'assets/images/products/Food.png',
+    image: 'assets/images/products/vegetables.jpeg',
   },
   {
     id: 'spices',
     name: 'Spices',
-    image: 'assets/images/products/Food.png',
+    image: 'assets/images/products/indian_spices.jpeg',
   },
   {
     id: 'fruits',
     name: 'Fresh Fruits',
-    image: 'assets/images/products/Food.png',
+    image: 'assets/images/products/fruits.jpeg',
   },
   {
     id: 'dryfruits',
     name: 'Dry Fruits',
-    image: 'assets/images/products/Food.png',
+    image: 'assets/images/products/dry_foods.jpeg',
   },
   {
     id: 'grains',
     name: 'Grains & Staples',
-    image: 'assets/images/products/Food.png',
+    image: 'assets/images/products/grains_cereals.jpeg',
   },
 ];
  goToCategory(id: string) {
