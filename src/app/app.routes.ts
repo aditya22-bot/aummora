@@ -29,5 +29,21 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./career/career').then(m => m.Career)
   },
-  { path: 'category/:id', component: CategoryDetails }
+  { path: 'category/:id', component: CategoryDetails },
+  {
+    path: 'csr',
+    loadComponent: () =>
+      import('./crs-page/crs-page').then(m => m.CrsPage)
+  },
+  {
+    path: 'services',
+    loadComponent: () =>
+      import('./services/services').then(m => m.Services)
+  },
+  {
+    path: 'supplier-chain',
+    loadComponent: () =>
+      import('./supplier-chain/supplier-chain').then(m => m.SupplierChain)
+  },
+
 ];
