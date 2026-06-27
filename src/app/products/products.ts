@@ -4,15 +4,62 @@ import { Footer } from '../footer/footer';
 import { MatIconModule } from '@angular/material/icon';
 import { ServiceOffer } from '../service-offer/service-offer';
 import { ProductCategories } from '../product-categories/product-categories';
-
+// ServiceOffer
 @Component({
   selector: 'app-products',
-  imports: [CommonModule,Footer,MatIconModule,ServiceOffer,ProductCategories],
+  imports: [CommonModule,Footer,MatIconModule,ProductCategories],
   templateUrl: './products.html',
   styleUrl: './products.scss',
 })
 export class Products {
-products = [
+
+countries = 0;
+products = 0;
+clients = 0;
+shipments = 0;
+
+
+ngOnInit(): void {
+
+  this.animateCounter('countries', 20);
+
+  this.animateCounter('products', 100);
+
+  this.animateCounter('clients', 500);
+
+  this.animateCounter('shipments', 1000);
+
+}
+animateCounter(
+  property: 'countries' | 'products' | 'clients' | 'shipments',
+  target: number,
+  duration = 2000
+) {
+
+  const fps = 60;
+  const totalFrames = Math.round(duration / (1000 / fps));
+
+  let frame = 0;
+
+  const counter = setInterval(() => {
+
+    frame++;
+
+    const progress = frame / totalFrames;
+
+    this[property] = Math.round(target * progress);
+
+    if (frame >= totalFrames) {
+
+      this[property] = target;
+
+      clearInterval(counter);
+
+    }
+
+  }, 1000 / fps);
+}
+product = [
     {
       title: 'Copper Bottles',
       image: 'assets/images/products/copper1.jpg',

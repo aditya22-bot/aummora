@@ -1,4 +1,4 @@
-<div class="slider" [style.background-image]="'url(' + currentImage() + ')'">
+<!-- <div class="slider" [style.background-image]="'url(' + currentImage() + ')'">
   <div class="overlay-text">
     <h1>Global Supplier of Quality Products</h1>
     <p>
@@ -6,15 +6,83 @@
       world.
     </p>
   </div>
-</div>
-<section class="welcome-section">
+</div> -->
+
+<section class="hero-section" [style.background-image]="'url(' + currentImage() + ')'">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <div class="hero-left">
+      <span class="sub-title">GLOBAL TRADE SOLUTIONS</span>
+
+      <h1>
+        Connecting <br />
+        Indian Excellence to <br />
+        <span>Global</span> Markets
+      </h1>
+
+      <p>
+        Premium sourcing, quality assurance and reliable export solutions for businesses worldwide.
+      </p>
+
+      <div class="hero-buttons">
+        <a routerLink="/products" routerLinkActive="active" class="btn blue">
+          Explore Products →
+        </a>
+
+        <a routerLink="/contact-us" routerLinkActive="active" class="btn red"> Get a Quote → </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-features">
+    <div class="feature-item">
+      <img src="assets/icons/world.svg" alt="Global Reach" />
+      <div class="feature-text">
+        <h4>Global Reach</h4>
+        <p>Serving 20+ Countries</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="feature-item">
+      <img src="assets/icons/shield-check.svg" alt="Quality" />
+      <div class="feature-text">
+        <h4>Quality Assured</h4>
+        <p>100% Quality Check</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="feature-item">
+      <img src="assets/icons/truck-delivery.svg" alt="Delivery" />
+      <div class="feature-text">
+        <h4>Timely Delivery</h4>
+        <p>On-time, Every Time</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="feature-item">
+      <img src="assets/icons/users.svg" alt="Customer" />
+      <div class="feature-text">
+        <h4>Customer Focused</h4>
+        <p>Relationship that Lasts</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <section class="welcome-section">
   <div class="welcome-container">
-    <!-- Left Image -->
+   
     <div class="welcome-image">
       <img src="assets/images/products/copper1.jpg" alt="Aumorra International" />
     </div>
 
-    <!-- Right Content -->
+   
     <div class="welcome-text">
       <h2>Welcome to <span>Aumorra International</span></h2>
 
@@ -46,6 +114,57 @@
       </p>
 
       <button class="know-more-btn" routerLink="/about">Know More</button>
+    </div>
+  </div>
+</section> -->
+
+<section class="about-section">
+  <div class="about-container">
+    <!-- Left Content -->
+    <div class="about-content">
+      <div class="section-title">
+        <span>ABOUT AUMORRA INTERNATIONAL</span>
+
+        <div class="line"></div>
+      </div>
+
+      <h2>
+        Building Global Connections
+        <br />
+        Through Trust & Quality
+      </h2>
+
+      <p>
+        Aumorra International is a trusted export company from India, committed to delivering
+        premium quality agricultural products, food products and more to global markets. Our mission
+        is to bridge the gap between Indian excellence and global demand with integrity, reliability
+        and innovation.
+      </p>
+
+      <a routerLink="/about" class="about-btn">
+        Know More About Us
+        <span>→</span>
+      </a>
+    </div>
+
+    <!-- Right Image -->
+
+    <div class="about-image">
+      <img src="assets/images/page3.jpg" alt="About Aumorra" />
+
+      <!-- Floating Card -->
+
+      <div class="quality-card">
+        <div class="quality-icon">
+          <img src="assets/icons/reward.png" alt="Quality" />
+        </div>
+
+        <div>
+          <h4>Quality You Can Trust</h4>
+
+          <p>Every product goes through stringent quality checks.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
