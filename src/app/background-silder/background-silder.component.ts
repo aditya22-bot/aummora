@@ -2,11 +2,12 @@ import { Component, signal, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Products } from '../products/products';
 import { RouterModule } from '@angular/router';
+import { ProductCategories } from '../product-categories/product-categories';
 
 @Component({
   selector: 'app-background-silder',
   standalone: true,
-  imports: [CommonModule,Products,RouterModule],
+  imports: [CommonModule,RouterModule,ProductCategories],
   templateUrl: './background-silder.component.html',
   styleUrls: ['./background-silder.component.scss'],
 })
