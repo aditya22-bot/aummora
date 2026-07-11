@@ -7,7 +7,7 @@ import { ProductCategories } from '../product-categories/product-categories';
 // ServiceOffer
 @Component({
   selector: 'app-products',
-  imports: [CommonModule,Footer,MatIconModule,ProductCategories],
+  imports: [CommonModule,Footer,MatIconModule],
   templateUrl: './products.html',
   styleUrl: './products.scss',
 })
