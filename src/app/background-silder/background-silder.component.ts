@@ -7,7 +7,7 @@ import { ProductCategories } from '../product-categories/product-categories';
 @Component({
   selector: 'app-background-silder',
   standalone: true,
-  imports: [CommonModule,RouterModule,ProductCategories],
+  imports: [CommonModule,RouterModule,ProductCategories,],
   templateUrl: './background-silder.component.html',
   styleUrls: ['./background-silder.component.scss'],
 })

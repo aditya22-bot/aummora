@@ -1,129 +1,35 @@
 <section class="export-section">
-  <div class="section-header">
-    <div class="sub-title">
-      <span>WHAT WE EXPORT</span>
-      <div class="line"></div>
-    </div>
-
-    <h2>Premium Products. Global Standards.</h2>
-  </div>
-
-  <div class="category-container">
-    @for (item of categories; track item.id) {
-      <div class="card" (click)="goToCategory(item.id)">
-        <div class="image-box">
-          <img [src]="item.image" [alt]="item.name" />
-
-          <!-- <div class="icon-box">
-            <img [src]="item.icon" [alt]="item.name" />
-          </div> -->
-        </div>
-
-        <div class="content">
-          <h3>{{ item.name }}</h3>
-
-          <span class="arrow">→</span>
-        </div>
-      </div>
-    }
-  </div>
-
-  <div class="view-btn">
-    <a routerLink="/products"> View All Products → </a>
-  </div>
-</section>
-
-<!--=========================================
-WHAT WE EXPORT
-==========================================-->
-
-<section class="export-products">
   <div class="container">
-    <span class="section-subtitle"> WHAT WE EXPORT </span>
-
-    <h2>Premium Products. Global Standards.</h2>
-
-    <div class="products-grid">
-      <!-- Product 1 -->
-      <div class="product-card">
-        <img src="assets/images/products/onion.jpg" alt="Fresh Onions" />
-
-        <div class="product-info">
-          <h4>Fresh Onions</h4>
-
-          <a href="#">
-            <i class="bi bi-arrow-right"></i>
-          </a>
-        </div>
+    <div class="section-title">
+      <div class="title-top">
+        <span>WHAT WE EXPORT</span>
+        <div class="line"></div>
       </div>
 
-      <!-- Product 2 -->
-      <div class="product-card">
-        <img src="assets/images/products/rice.jpg" alt="Basmati Rice" />
-
-        <div class="product-info">
-          <h4>Basmati Rice</h4>
-
-          <a href="#">
-            <i class="bi bi-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Product 3 -->
-      <div class="product-card">
-        <img src="assets/images/products/spices.jpg" alt="Spices" />
-
-        <div class="product-info">
-          <h4>Spices</h4>
-
-          <a href="#">
-            <i class="bi bi-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Product 4 -->
-      <div class="product-card">
-        <img src="assets/images/products/pulses.jpg" alt="Pulses" />
-
-        <div class="product-info">
-          <h4>Pulses</h4>
-
-          <a href="#">
-            <i class="bi bi-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Product 5 -->
-      <div class="product-card">
-        <img src="assets/images/products/fruits.jpg" alt="Fresh Fruits" />
-
-        <div class="product-info">
-          <h4>Fresh Fruits</h4>
-
-          <a href="#">
-            <i class="bi bi-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Product 6 -->
-      <div class="product-card">
-        <img src="assets/images/products/nuts.jpg" alt="Nuts" />
-
-        <div class="product-info">
-          <h4>Nuts</h4>
-
-          <a href="#">
-            <i class="bi bi-arrow-right"></i>
-          </a>
-        </div>
-      </div>
+      <h2>Premium Products. Global Standards.</h2>
     </div>
 
-    <div class="view-btn">
+    <div class="product-grid">
+      @for (product of categories; track product.id) {
+        <div class="product-card" (click)="goToCategory(product.id)">
+          <div class="image-box">
+            <img [src]="product.image" [alt]="product.name" />
+
+            <div class="icon-box">
+              <img [src]="product.icon" [alt]="product.name" />
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <h3>{{ product.name }}</h3>
+
+            <span>→</span>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="button-area">
       <a routerLink="/products">
         View All Products
         <i class="bi bi-arrow-right"></i>
@@ -131,80 +37,73 @@ WHAT WE EXPORT
     </div>
   </div>
 </section>
-
 <!--=========================================
 CERTIFICATIONS
 ==========================================-->
 
 <section class="certification-section">
   <div class="container">
-    <span class="section-subtitle"> OUR CERTIFICATIONS & COMPLIANCE </span>
-
-    <h2>Trusted & Globally Certified</h2>
+    <div class="section-title">
+      <div class="title-top">
+        <span>OUR CERTIFICATIONS & COMPLIANCE</span>
+        <div class="line"></div>
+      </div>
+    </div>
 
     <div class="certificate-grid">
       <!-- IEC -->
       <div class="certificate-card">
         <img src="assets/icons/iec.png" alt="IEC" />
-
         <h4>Import Export Code</h4>
       </div>
 
       <!-- GST -->
       <div class="certificate-card">
         <img src="assets/icons/gst.png" alt="GST" />
-
         <h4>GST</h4>
       </div>
 
       <!-- MSME -->
       <div class="certificate-card">
         <img src="assets/icons/msme.png" alt="MSME" />
-
         <h4>MSME Registration</h4>
       </div>
 
       <!-- FSSAI -->
       <div class="certificate-card">
         <img src="assets/icons/fssai.png" alt="FSSAI" />
-
         <h4>FSSAI</h4>
       </div>
 
       <!-- APEDA -->
       <div class="certificate-card">
         <img src="assets/icons/apeda.png" alt="APEDA" />
-
         <h4>APEDA</h4>
       </div>
 
-      <!-- Packaging -->
+      <!-- Export Packaging -->
       <div class="certificate-card">
         <img src="assets/icons/package.png" alt="Packaging" />
-
         <h4>Export Packaging Compliance</h4>
       </div>
 
       <!-- Phytosanitary -->
       <div class="certificate-card">
         <img src="assets/icons/phytosanitary.png" alt="Phytosanitary" />
-
         <h4>Phytosanitary Support</h4>
-
         <p>(Plant / Herbal Goods)</p>
       </div>
 
       <!-- Shop Act -->
       <div class="certificate-card">
         <img src="assets/icons/shopact.png" alt="Shop Act" />
-
         <h4>Shop Act Registration</h4>
-
         <p>Maharashtra Government</p>
       </div>
     </div>
   </div>
 </section>
+
 <!--=========================================
 STATISTICS SECTION
 ==========================================-->
@@ -212,7 +111,7 @@ STATISTICS SECTION
 <section class="stats-section">
   <div class="container">
     <div class="stats-grid">
-      <!-- Item 1 -->
+      <!-- Countries -->
       <div class="stat-card">
         <div class="stat-icon">
           <i class="bi bi-globe2"></i>
@@ -220,14 +119,12 @@ STATISTICS SECTION
 
         <div class="stat-content">
           <h2>20+</h2>
-
           <h4>Countries Served</h4>
-
           <p>Across 4 Continents</p>
         </div>
       </div>
 
-      <!-- Item 2 -->
+      <!-- Products -->
       <div class="stat-card">
         <div class="stat-icon">
           <i class="bi bi-box-seam"></i>
@@ -235,14 +132,12 @@ STATISTICS SECTION
 
         <div class="stat-content">
           <h2>100+</h2>
-
           <h4>Products</h4>
-
           <p>Diverse Range</p>
         </div>
       </div>
 
-      <!-- Item 3 -->
+      <!-- Clients -->
       <div class="stat-card">
         <div class="stat-icon">
           <i class="bi bi-people"></i>
@@ -250,14 +145,12 @@ STATISTICS SECTION
 
         <div class="stat-content">
           <h2>500+</h2>
-
           <h4>Happy Clients</h4>
-
           <p>Worldwide</p>
         </div>
       </div>
 
-      <!-- Item 4 -->
+      <!-- Shipments -->
       <div class="stat-card">
         <div class="stat-icon">
           <i class="bi bi-truck"></i>
@@ -265,12 +158,13 @@ STATISTICS SECTION
 
         <div class="stat-content">
           <h2>1000+</h2>
-
           <h4>Shipments</h4>
-
           <p>Delivered Successfully</p>
         </div>
       </div>
     </div>
   </div>
 </section>
+<div class="footeer">
+  <app-footer></app-footer>
+</div>
