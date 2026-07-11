@@ -209,3 +209,617 @@
 }
 
 }
+
+
+
+
+// kkk
+/*==========================
+GENERAL
+==========================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.container{
+
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/*==========================
+HERO
+==========================*/
+
+.products-hero{
+
+    position:relative;
+
+    height:380px;
+
+    background:url('/assets/images/page2.jpg');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        90deg,
+        rgba(5,24,68,.92) 0%,
+        rgba(5,24,68,.82) 40%,
+        rgba(5,24,68,.15) 100%
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+    z-index:2;
+
+    color:white;
+}
+
+.breadcrumb{
+
+    font-size:14px;
+
+    margin-bottom:20px;
+
+    color:#d7d7d7;
+}
+
+.breadcrumb span{
+
+    margin:0 6px;
+}
+
+.active{
+
+    color:#ff5252;
+}
+
+.products-hero h1{
+
+    font-size:56px;
+
+    font-weight:700;
+
+    line-height:1.15;
+
+    max-width:520px;
+
+}
+
+.hero-line{
+
+    width:90px;
+
+    height:4px;
+
+    background:#ef4444;
+
+    margin:25px 0;
+
+    border-radius:10px;
+
+}
+
+.products-hero p{
+
+    max-width:520px;
+
+    color:#d9d9d9;
+
+    line-height:30px;
+
+    font-size:17px;
+
+}
+
+/*==========================
+PRODUCT INTRO
+==========================*/
+
+.product-intro{
+
+    padding:70px 0 45px;
+}
+
+.intro-flex{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:40px;
+}
+
+.sub-title{
+
+    color:#dc3c3c;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    font-size:14px;
+}
+
+.product-intro h2{
+
+    margin:12px 0;
+
+    font-size:40px;
+
+    color:#0b2b63;
+
+    line-height:48px;
+
+}
+
+.product-intro p{
+
+    max-width:650px;
+
+    color:#666;
+
+    line-height:30px;
+
+}
+
+.catalog-btn{
+
+    background:#0d2d63;
+
+    color:white;
+
+    border:none;
+
+    padding:16px 28px;
+
+    border-radius:8px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    white-space:nowrap;
+
+}
+
+.catalog-btn:hover{
+
+    background:#123b82;
+
+    transform:translateY(-2px);
+
+}
+
+/*==========================
+RESPONSIVE
+==========================*/
+
+@media(max-width:768px){
+
+.products-hero{
+
+height:320px;
+
+}
+
+.products-hero h1{
+
+font-size:40px;
+
+}
+
+.intro-flex{
+
+flex-direction:column;
+align-items:flex-start;
+
+}
+
+.catalog-btn{
+
+width:100%;
+
+}
+
+}
+
+/*==========================
+PRODUCT GRID
+==========================*/
+
+.products-section{
+
+    padding-bottom:70px;
+
+}
+
+.product-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:28px;
+
+}
+
+.product-card{
+
+    background:#fff;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.product-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.16);
+
+}
+
+.product-card img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+.card-body{
+
+    padding:22px;
+
+}
+
+.product-icon{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:26px;
+
+    margin-top:-50px;
+
+    margin-bottom:18px;
+
+    box-shadow:0 5px 18px rgba(0,0,0,.15);
+
+}
+
+.card-body h3{
+
+    color:#0b2b63;
+
+    font-size:22px;
+
+    margin-bottom:12px;
+
+}
+
+.card-body p{
+
+    color:#666;
+
+    line-height:26px;
+
+    font-size:15px;
+
+    margin-bottom:25px;
+
+}
+
+.card-body a{
+
+    color:#d83b38;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.card-body a:hover{
+
+    letter-spacing:1px;
+
+}
+
+/*==========================
+RESPONSIVE
+==========================*/
+
+@media(max-width:1200px){
+
+.product-grid{
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+}
+
+@media(max-width:900px){
+
+.product-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:600px){
+
+.product-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+/*=========================================
+CTA SECTION
+=========================================*/
+
+.product-cta{
+
+    padding-bottom:80px;
+
+}
+
+.cta-box{
+
+    position:relative;
+
+    background:url('/assets/images/page3.jpg');
+
+    background-size:cover;
+
+    background-position:center;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+}
+
+.cta-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+    90deg,
+    rgba(5,24,68,.95) 0%,
+    rgba(5,24,68,.82) 45%,
+    rgba(5,24,68,.25) 100%
+    );
+
+}
+
+.cta-content{
+
+    position:relative;
+
+    z-index:2;
+
+    color:white;
+
+    padding:55px 60px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.cta-left{
+
+    max-width:600px;
+
+}
+
+.cta-subtitle{
+
+    color:#ff5a5a;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+}
+
+.cta-left h2{
+
+    margin:12px 0;
+
+    font-size:42px;
+
+    font-weight:700;
+
+}
+
+.cta-left p{
+
+    color:#e2e2e2;
+
+    line-height:28px;
+
+    font-size:16px;
+
+}
+
+.cta-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+}
+
+.btn-red{
+
+    background:#e53935;
+
+    color:white;
+
+    border:none;
+
+    padding:15px 32px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-red:hover{
+
+    background:#c62828;
+
+    transform:translateY(-2px);
+
+}
+
+.btn-outline{
+
+    background:transparent;
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.6);
+
+    padding:15px 32px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-outline:hover{
+
+    background:white;
+
+    color:#0b2b63;
+
+}
+
+/*=========================================
+RESPONSIVE
+=========================================*/
+
+@media(max-width:992px){
+
+.cta-content{
+
+flex-direction:column;
+
+text-align:center;
+
+gap:35px;
+
+padding:50px 30px;
+
+}
+
+.cta-buttons{
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.cta-left h2{
+
+font-size:30px;
+
+}
+
+.cta-buttons{
+
+flex-direction:column;
+
+width:100%;
+
+}
+
+.btn-red,
+.btn-outline{
+
+width:100%;
+
+}
+
+}

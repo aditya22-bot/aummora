@@ -1,67 +1,202 @@
-<div class="amurra-product-section">
-  <app-product-categories></app-product-categories>
-</div>
+<!-- ================= HERO SECTION ================= -->
 
-<section class="stats-section">
-  <div class="stats-container">
-    <!-- Countries -->
-    <div class="stat-item">
-      <div class="stat-icon">
-        <img src="assets/icons/worldwide.png" alt="Countries" />
-      </div>
+<section class="products-hero">
+  <div class="hero-overlay"></div>
 
-      <div class="stat-text">
-        <h2>{{ countries }}+</h2>
-        <h4>Countries Served</h4>
-        <p>Across 4 Continents</p>
-      </div>
+  <div class="container hero-content">
+    <div class="breadcrumb">Home <span>></span> <span class="active">Products</span></div>
+
+    <h1>
+      Premium Products.<br />
+      Global Standards.
+    </h1>
+
+    <div class="hero-line"></div>
+
+    <p>
+      We export a wide range of high-quality agricultural products, food items and more, sourced
+      from trusted farms and manufacturers across India.
+    </p>
+  </div>
+</section>
+
+<!-- ================= PRODUCT INTRO ================= -->
+
+<section class="product-intro">
+  <div class="container intro-flex">
+    <div>
+      <span class="sub-title"> OUR PRODUCT RANGE </span>
+
+      <h2>Authentic Quality. Carefully Delivered.</h2>
+
+      <p>
+        From farm to the world, our products go through strict quality checks and are packed to
+        retain their freshness and value.
+      </p>
     </div>
 
-    <div class="divider"></div>
+    <button class="catalog-btn">
+      Download Product Catalog
+      <span>⬇</span>
+    </button>
+  </div>
+</section>
+<!-- ================= PRODUCT CARDS ================= -->
 
-    <!-- Products -->
-    <div class="stat-item">
-      <div class="stat-icon">
-        <img src="assets/icons/worldwide.png" alt="Products" />
+<section class="products-section">
+  <div class="container">
+    <div class="product-grid">
+      <!-- Card 1 -->
+      <div class="product-card">
+        <img src="/assets/images/products/onion.jpg" alt="Fresh Onions" />
+
+        <div class="card-body">
+          <div class="product-icon">🧅</div>
+
+          <h3>Fresh Onions</h3>
+
+          <p>Premium quality onions known for rich flavour, purity and long shelf life.</p>
+
+          <a href="#"> View Details → </a>
+        </div>
       </div>
 
-      <div class="stat-text">
-        <h2>{{ products }}+</h2>
-        <h4>Products</h4>
-        <p>Diverse Range</p>
-      </div>
-    </div>
+      <!-- Card 2 -->
+      <div class="product-card">
+        <img src="/assets/images/products/rice.jpg" alt="Rice" />
 
-    <div class="divider"></div>
+        <div class="card-body">
+          <div class="product-icon">🌾</div>
 
-    <!-- Clients -->
-    <div class="stat-item">
-      <div class="stat-icon">
-        <img src="assets/icons/worldwide.png" alt="Clients" />
-      </div>
+          <h3>Basmati Rice</h3>
 
-      <div class="stat-text">
-        <h2>{{ clients }}+</h2>
-        <h4>Happy Clients</h4>
-        <p>Worldwide</p>
-      </div>
-    </div>
+          <p>Aromatic long grain basmati rice, perfect for every cuisine.</p>
 
-    <div class="divider"></div>
-
-    <!-- Shipments -->
-    <div class="stat-item">
-      <div class="stat-icon">
-        <img src="assets/icons/worldwide.png" alt="Shipments" />
+          <a href="#"> View Details → </a>
+        </div>
       </div>
 
-      <div class="stat-text">
-        <h2>{{ shipments }}+</h2>
-        <h4>Shipments</h4>
-        <p>Delivered Successfully</p>
+      <!-- Card 3 -->
+      <div class="product-card">
+        <img src="/assets/images/products/spices.jpg" alt="Spices" />
+
+        <div class="card-body">
+          <div class="product-icon">🌶️</div>
+
+          <h3>Spices</h3>
+
+          <p>Pure and natural spices adding authentic taste and aroma.</p>
+
+          <a href="#"> View Details → </a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="product-card">
+        <img src="/assets/images/products/pulses.jpg" alt="Pulses" />
+
+        <div class="card-body">
+          <div class="product-icon">🌱</div>
+
+          <h3>Pulses</h3>
+
+          <p>High-quality pulses sourced from reliable farms across India.</p>
+
+          <a href="#"> View Details → </a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="product-card">
+        <img src="/assets/images/products/fruits.jpg" alt="Fruits" />
+
+        <div class="card-body">
+          <div class="product-icon">🍊</div>
+
+          <h3>Fresh Fruits</h3>
+
+          <p>Fresh fruits selected carefully for export quality.</p>
+
+          <a href="#"> View Details → </a>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="product-card">
+        <img src="/assets/images/products/dryfruits.jpg" alt="Dry Fruits" />
+
+        <div class="card-body">
+          <div class="product-icon">🥜</div>
+
+          <h3>Nuts & Dry Fruits</h3>
+
+          <p>Premium nuts rich in nutrition and freshness.</p>
+
+          <a href="#"> View Details → </a>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="product-card">
+        <img src="/assets/images/products/oilseeds.jpg" alt="Oil Seeds" />
+
+        <div class="card-body">
+          <div class="product-icon">🌰</div>
+
+          <h3>Oil Seeds</h3>
+
+          <p>Best quality oil seeds sourced for purity and freshness.</p>
+
+          <a href="#"> View Details → </a>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="product-card">
+        <img src="/assets/images/products/others.jpg" alt="Others" />
+
+        <div class="card-body">
+          <div class="product-icon">📦</div>
+
+          <h3>Other Products</h3>
+
+          <p>A wide range of export products to satisfy global requirements.</p>
+
+          <a href="#"> View Details → </a>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- ================= CTA SECTION ================= -->
+
+<section class="product-cta">
+  <div class="container">
+    <div class="cta-box">
+      <div class="cta-overlay"></div>
+
+      <div class="cta-content">
+        <div class="cta-left">
+          <span class="cta-subtitle"> LOOKING FOR SOMETHING SPECIFIC? </span>
+
+          <h2>We Can Source It For You</h2>
+
+          <p>Tell us your requirement and our team will connect you with the right solution.</p>
+        </div>
+
+        <div class="cta-buttons">
+          <button class="btn-red">Send Requirement →</button>
+
+          <button class="btn-outline">Contact Us →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <div class="amurra-product-section">
+  <app-product-categories></app-product-categories>
+</div> -->
 
 <div class="aumoora-fotter"><app-footer></app-footer></div>
