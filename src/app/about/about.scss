@@ -226,6 +226,7 @@ MISSION
 .mission-section{
 
     padding:70px 0;
+    background:#f8fafc;
 }
 
 .mission-grid{
@@ -236,19 +237,34 @@ MISSION
     border-radius:12px;
     overflow:hidden;
     box-shadow:0 10px 35px rgba(0,0,0,.08);
+     grid-template-columns:repeat(4,1fr);
+    gap:25px;
 
 }
 
 .mission-card{
 
-    padding:40px 28px;
+    padding:40px 30px;
     text-align:center;
     border-right:1px solid #ececec;
+    background:#fff;
+    border-radius:16px;
+    padding:40px 30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.3s;
 }
-
+.mission-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+}
 .mission-card:last-child{
 
     border-right:none;
+}
+.mission-card ul{
+    text-align:left;
+    display:inline-block;
+    margin-top:15px;
 }
 
 .icon{
@@ -267,9 +283,10 @@ MISSION
 }
 
 .mission-card h3{
-
-    color:#0d2d63;
-    margin-bottom:15px;
+    color:#0a2f6b;
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:18px;
 }
 
 .mission-card p{
@@ -319,16 +336,22 @@ APPROACH
 
 .approach-grid{
 
-    display:grid;
-    grid-template-columns:repeat(6,1fr);
-    gap:20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
 }
 
 .approach-card{
-
-    padding:10px;
+background: #fff;
+    border-radius: 16px;
+    padding: 30px 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
 }
-
+.approach-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
 .red{
 
     color:#e53935;
@@ -495,4 +518,19 @@ width:100%;
 
 }
 
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon img {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
 }

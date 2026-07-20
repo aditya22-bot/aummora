@@ -2225,3 +2225,55 @@ Extra Small Devices
 }
 
 }
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.feature-icon img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    display: block;
+}
+
+.work-card {
+    text-align: center;
+    padding: 30px 25px;
+}
+
+.work-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.work-icon img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    display: block;
+}
+
+.work-card h3 {
+    margin: 15px 0 10px;
+}
+
+.work-card p {
+    line-height: 1.7;
+}
