@@ -1403,3 +1403,34 @@ font-size:12px;
     object-fit: contain;
     display: block;
 }
+
+.contact-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  margin-right: 12px;
+}
+
+.join-contact {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.join-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.join-title-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.contact-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
