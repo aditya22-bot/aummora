@@ -5,15 +5,15 @@ CONTACT HERO
 .contact-hero{
     position:relative;
     width: 100%;
-    min-height: 60vh;
+    min-height: 30vh;
     background:url('/assets/images/contact_us_header.jpeg');
     background-size:cover;
     background-position:center;
     display:flex;
     align-items:center;
-       background-repeat: no-repeat;
-     overflow: hidden;
-align-items: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    align-items: center;
 }
 
 .hero-overlay{

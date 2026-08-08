@@ -34,12 +34,12 @@ body{
    HERO SECTION
 ========================================== */
 
-.hero-section{
- position: relative;
+.hero-section {
+    position: relative;
     width: 100%;
-    height: 50vh;      /* Half of the screen */
-    min-height: 350px; /* Minimum height */
-    max-height: 550px; /* Maximum height */
+    height: 50vh;
+    min-height: 400px;
+    max-height: 550px;
 
     display: flex;
     flex-direction: column;
@@ -48,10 +48,9 @@ body{
     overflow: hidden;
 
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center center;
     background-size: cover;
 }
-
 .hero-overlay{
     position:absolute;
     inset:0;

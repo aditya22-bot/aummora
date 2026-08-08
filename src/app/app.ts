@@ -10,5 +10,13 @@ import { RouterOutlet,RouterLink, RouterModule  } from '@angular/router';
   styleUrls: ['./app.scss']
 })
 export class AppComponent {
-  
+  mobileMenuOpen = false;
+
+  toggleMenu(): void {
+  this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
+  closeMenu(): void {
+  this.mobileMenuOpen = false;
+  }
 }

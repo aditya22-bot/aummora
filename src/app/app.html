@@ -1,39 +1,74 @@
+<!-- =========================================================
+     AUMORRA HEADER
+========================================================= -->
+
 <header class="aumorra-header">
-  <div class="container header-wrapper">
-    <!-- Logo -->
-    <div class="logo">
-      <a routerLink="/">
-        <img src="assets/icons/logo.png" alt="Aumorra Logo" class="logo-img" />
-      </a>
-    </div>
+  <div class="container">
+    <div class="header-wrapper">
+      <!-- =================================================
+           LOGO
+      ================================================== -->
 
-    <!-- Navigation -->
-    <nav class="nav-links">
-      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-        Home
-      </a>
+      <div class="logo">
+        <a routerLink="/">
+          <img src="/assets/icons/logo.png" alt="Aumorra International" class="logo-img" />
+        </a>
+      </div>
 
-      <a routerLink="/about" routerLinkActive="active"> About Us </a>
+      <!-- =================================================
+           NAVIGATION
+      ================================================== -->
 
-      <a routerLink="/products" routerLinkActive="active"> Products </a>
+      <nav class="nav-links" [class.mobile-open]="mobileMenuOpen">
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="closeMenu()"
+        >
+          Home
+        </a>
 
-      <a routerLink="/services" routerLinkActive="active"> Services </a>
+        <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()"> About Us </a>
 
-      <a routerLink="/csr" routerLinkActive="active"> CSR </a>
+        <a routerLink="/products" routerLinkActive="active" (click)="closeMenu()"> Products </a>
 
-      <a routerLink="/careers" routerLinkActive="active"> Careers </a>
+        <a routerLink="/services" routerLinkActive="active" (click)="closeMenu()"> Services </a>
 
-      <a routerLink="/contact-us" routerLinkActive="active"> Contact Us </a>
-    </nav>
+        <a routerLink="/csr" routerLinkActive="active" (click)="closeMenu()"> CSR </a>
 
-    <!-- Button -->
-    <div class="header-action">
-      <a routerLink="/contact-us" class="quote-btn">
-        Get a Quote
-        <span>→</span>
-      </a>
+        <a routerLink="/careers" routerLinkActive="active" (click)="closeMenu()"> Careers </a>
+
+        <a routerLink="/contact-us" routerLinkActive="active" (click)="closeMenu()"> Contact Us </a>
+      </nav>
+
+      <!-- =================================================
+           GET A QUOTE BUTTON
+      ================================================== -->
+
+      <div class="header-action">
+        <a routerLink="/contact-us" class="quote-btn">
+          Get a Quote
+          <span>→</span>
+        </a>
+      </div>
+
+      <!-- =================================================
+           MOBILE MENU BUTTON
+      ================================================== -->
+
+      <button
+        type="button"
+        class="mobile-menu-btn"
+        [class.open]="mobileMenuOpen"
+        (click)="toggleMenu()"
+        aria-label="Toggle navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </div>
 </header>
-
 <router-outlet></router-outlet>
