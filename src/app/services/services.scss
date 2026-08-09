@@ -23,34 +23,28 @@ HERO
 ===================================*/
 
 .services-hero{
-
     position:relative;
-
-    height:390px;
-
+    min-height: auto;
+    height: fit-content;
+    width: 100%;
     display:flex;
-
     align-items:center;
-
-    background:url('/assets/images/services/service_header.jpeg');
-
+    background:url('/assets/images/services/service_header.jpg');
     background-size:cover;
-
     background-position:center;
-
 }
 
 .hero-overlay{
 
      position:absolute;
     inset:0;
-    background:
-    linear-gradient(
-        90deg,
-        rgba(6,25,65,.88) 0%,
-        rgba(6,25,65,.72) 45%,
-        rgba(6,25,65,.25) 100%
-    );
+    // background:
+    // linear-gradient(
+    //     90deg,
+    //     rgba(6,25,65,.88) 0%,
+    //     rgba(6,25,65,.72) 45%,
+    //     rgba(6,25,65,.25) 100%
+    // );
 }
 
 .hero-content{
@@ -559,18 +553,15 @@ OUR PROCESS
 
 .process-wrapper{
 
-    margin-top:50px;
+      width: 100%;
 
-    display:flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    align-items:flex-start;
+  gap: 12px;
 
-    justify-content:center;
-
-    gap:15px;
-
-    flex-wrap:wrap;
-
+  margin-top: 40px;
 }
 
 .process-card{
@@ -630,12 +621,84 @@ OUR PROCESS
     font-weight:700;
 
 }
-.process-icon img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
+.process-icon {
+  width: 75px;
+  height: 75px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 50%;
 }
 
+.process-icon img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #ff3b3b;
+
+  font-size: 28px;
+
+  line-height: 1;
+}
+
+.arrow i {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+/* PROCESS CARD */
+/* ============================= */
+
+.process-card {
+  position: relative;
+
+  width: 220px;
+  min-height: 300px;
+
+  padding: 25px 20px;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  text-align: center;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  box-sizing: border-box;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
 
 
 .process-card h4{

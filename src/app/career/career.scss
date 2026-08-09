@@ -2,13 +2,119 @@
 CAREER HERO SECTION
 =========================================*/
 
+/* ================= CAREER HERO ================= */
+
 .career-hero {
   position: relative;
   width: 100%;
+  min-height: fit-content;
   overflow: hidden;
-  background: #0b2454;
+  display: flex;
+  align-items: center;
 }
 
+/* Full Background Image */
+
+.career-hero-bg {
+  position: absolute;
+  inset: 0;
+
+  background-image: url("/assets/images/career_page_header.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: 0;
+}
+
+/* Blue overlay on background */
+
+.career-hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(10, 35, 80, 0.45);
+}
+
+
+/* ================= CONTENT CARD ================= */
+
+.career-content-card {
+  position: relative;
+  z-index: 2;
+
+  width: 625px;
+  min-height: 490px;
+
+  margin-left: 17%;
+
+  padding: 65px 55px;
+
+//   background: rgba(8, 38, 100, 0.95);
+
+  color: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+//   box-sizing: border-box;
+}
+
+
+/* Company Name */
+
+.career-content-card .company-name {
+  color: #ff3b3b;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  margin-bottom: 25px;
+}
+
+
+/* Main Heading */
+
+.career-content-card h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 56px;
+  font-weight: 700;
+
+  line-height: 1.08;
+}
+
+
+/* Red Line */
+
+.career-content-card .hero-line {
+  width: 70px;
+  height: 3px;
+
+  background: #ff4b4b;
+
+  margin: 30px 0;
+}
+
+
+/* Description */
+
+.career-content-card p {
+  margin: 0;
+
+  max-width: 520px;
+
+  color: #ffffff;
+
+  font-size: 17px;
+  line-height: 1.8;
+}
 .career-hero .container {
   max-width: 1320px;
   margin: auto;
@@ -16,10 +122,15 @@ CAREER HERO SECTION
 }
 
 .hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 45% 55%;
-  align-items: stretch;
-  min-height: 430px;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+  padding: 80px 40px;
 }
 
 /*==============================

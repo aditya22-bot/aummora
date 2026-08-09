@@ -201,38 +201,38 @@
             WHATSAPP
 ==========================================*/
 
-.whatsapp-btn{
-    position:fixed;
-    right:25px;
-    bottom:25px;
+.whatsapp-btn {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
 
-    width:60px;
-    height:60px;
+    width: 60px;
+    height: 60px;
 
-    border-radius:50%;
+    border-radius: 50%;
 
-    background:#25D366;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    text-decoration: none;
 
-    color:#fff;
-    text-decoration:none;
+    box-shadow: 0 10px 25px rgba(0,0,0,.25);
 
-    font-size:32px;
+    z-index: 999;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.25);
-
-    z-index:999;
-
-    transition:.3s;
+    transition: .3s;
 }
 
-.whatsapp-btn:hover{
-    transform:scale(1.08);
+.whatsapp-btn img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
 }
 
+.whatsapp-btn:hover {
+    transform: scale(1.08);
+}
 /*==========================================
             LAPTOP
 ==========================================*/

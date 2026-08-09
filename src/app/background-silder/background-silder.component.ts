@@ -14,11 +14,11 @@ import { ProductCategories } from '../product-categories/product-categories';
 export class BackgroundSilder implements OnInit {
 
   images = [
-    'assets/images/background_silder_1.jpeg',
-  'assets/images/background_silder_2.jpeg',
-  'assets/images/background_silder_3.jpg',
-  'assets/images/background_silder_4.jpg',
-  'assets/images/background_silder_5.jpg',
+  'assets/images/background_silder_1.jpg',
+  'assets/images/background_silder_2.jpg',
+  // 'assets/images/background_silder_3.jpg',
+  // 'assets/images/background_silder_4.jpg',
+  // 'assets/images/background_silder_5.jpg',
 ];
 
   currentIndex = signal(0);
