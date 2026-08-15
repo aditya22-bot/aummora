@@ -1,1099 +1,1244 @@
+/* =========================================================
+                    GLOBAL CONTAINER
+        SAME PROPORTION / ALL SCREEN RESOLUTIONS
+========================================================= */
+
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
-
-/*==================================
-GLOBAL STYLES
-==================================*/
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+.container {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding-left: clamp(8px, 3vw, 50px);
+    padding-right: clamp(8px, 3vw, 50px);
+    box-sizing: border-box;
 }
 
-body{
-    font-family:'Poppins',sans-serif;
-    background:#ffffff;
-    color:#222;
-    overflow-x:hidden;
+.footeer{
+    border-top: 2px solid rgba(255, 255, 255, 0.14);;
 }
+
+/* =========================================================
+                    COMMON SECTION TITLE
+========================================================= */
+
+.section-title {
+    width: 100%;
 
-.container{
-    width:100%;
-    max-width:1320px;
-    margin:auto;
-    padding:0 20px;
+    margin-bottom: clamp(20px, 3vw, 45px);
 }
 
-/*==================================
-SECTION SPACING
-==================================*/
 
-.export-section,
-.certification-section,
-.stats-section{
+/* =========================================================
+                    TITLE TOP
+========================================================= */
 
-    width:100%;
+.title-top {
+    display: flex;
 
-}
+    align-items: center;
 
-.export-section{
+    gap: clamp(7px, 1vw, 15px);
 
-    padding:70px 0 60px;
+    margin-bottom: clamp(7px, 1vw, 12px);
 
+    width: 100%;
 }
 
-.certification-section{
 
-    padding:60px 0;
+.title-top span {
+    flex-shrink: 0;
 
-}
+    color: #D62828;
 
-.stats-section{
+    font-size: clamp(7px, 0.9vw, 13px);
 
-    padding:28px 0;
+    font-weight: 600;
 
+    letter-spacing: clamp(0.3px, 0.08vw, 1px);
+
+    white-space: nowrap;
 }
 
-/*==================================
-COMMON TITLE
-==================================*/
 
-.section-title{
+.title-top .line {
+    width: clamp(25px, 5vw, 80px);
 
-    margin-bottom:45px;
+    height: clamp(1px, 0.15vw, 2px);
 
-}
+    background: #D62828;
 
-.title-top{
+    flex-shrink: 0;
+}
 
-    display:flex;
 
-    align-items:center;
+/* =========================================================
+                    MAIN HEADING
+========================================================= */
 
-    gap:12px;
+.section-title h2 {
+    margin: 0;
 
-    margin-bottom:12px;
+    padding: 0;
 
-}
+    color: #071D56;
 
-.title-top span{
+    font-size: clamp(18px, 2.4vw, 36px);
 
-    color:#d62828;
+    line-height: 1.2;
 
-    font-size:14px;
+    font-weight: 700;
+}
 
-    font-weight:700;
 
-    letter-spacing:1px;
+/* =========================================================
+                    EXPORT SECTION
+========================================================= */
 
-    text-transform:uppercase;
+.export-section {
 
-}
+    width: 100%;
 
-.line{
+    padding-top: clamp(25px, 5vw, 80px);
 
-    width:60px;
+    padding-bottom: clamp(25px, 5vw, 80px);
 
-    height:2px;
+    background: #ffffff;
 
-    background:#d62828;
+    overflow: hidden;
 
+    box-sizing: border-box;
 }
 
-.section-title h2{
 
-    color:#0B2B63;
+/* =========================================================
+                    PRODUCT GRID
+========================================================= */
 
-    font-size:42px;
+.product-grid {
 
-    font-weight:700;
+    width: 100%;
 
-    line-height:1.2;
+    display: grid;
 
+    /*
+       KEEP 4 COLUMNS
+       AT ALL SCREEN SIZES
+    */
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: clamp(8px, 2vw, 30px);
+
+    align-items: stretch;
 }
 
-/*==================================
-COMMON CARD
-==================================*/
 
-.product-card,
-.certificate-card{
+/* =========================================================
+                    PRODUCT CARD
+========================================================= */
 
-    border-radius:12px;
+.product-card {
 
-    overflow:hidden;
+    width: 100%;
 
-    background:#fff;
+    min-width: 0;
 
-    transition:.35s;
+    background: #ffffff;
 
-    border:1px solid #ededed;
+    border-radius: clamp(5px, 0.7vw, 12px);
 
-}
+    overflow: hidden;
 
-.product-card:hover,
-.certificate-card:hover{
+    cursor: pointer;
 
-    transform:translateY(-8px);
+    border: 1px solid #eeeeee;
 
-    box-shadow:0 18px 35px rgba(0,0,0,.12);
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.07);
 
-}
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 
-/*==================================
-BUTTON
-==================================*/
+    box-sizing: border-box;
+}
 
-.button-area{
 
-    text-align:center;
+.product-card:hover {
 
-    margin-top:45px;
+    transform: translateY(-5px);
 
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
-.button-area a{
 
-    display:inline-flex;
+/* =========================================================
+                    PRODUCT IMAGE BOX
+========================================================= */
 
-    align-items:center;
+.image-box {
 
-    gap:12px;
+    width: 100%;
 
-    background:#0B3D91;
+    /*
+       Keeps image ratio identical
+       at every resolution
+    */
+    aspect-ratio: 1 / 0.82;
 
-    color:#fff;
+    overflow: hidden;
 
-    padding:16px 38px;
+    background: #f5f5f5;
 
-    border-radius:8px;
+    position: relative;
+}
 
-    text-decoration:none;
 
-    font-weight:600;
+.image-box img {
 
-    transition:.3s;
+    width: 100%;
 
-}
+    height: 100%;
 
-.button-area a:hover{
+    display: block;
 
-    background:#082B63;
+    object-fit: cover;
 
+    transition: transform 0.4s ease;
 }
 
-/*==================================
-IMAGE ANIMATION
-==================================*/
 
-.product-card img{
+.product-card:hover .image-box img {
 
-    transition:.4s;
-
+    transform: scale(1.04);
 }
 
-.product-card:hover img{
 
-    transform:scale(1.08);
+/* =========================================================
+                    PRODUCT CARD FOOTER
+========================================================= */
 
-}
+.card-footer {
 
-/*==================================
-SMOOTH HOVER
-==================================*/
+    width: 100%;
 
-.product-card,
-.certificate-card,
-.stat-card{
+    min-height: clamp(35px, 5vw, 65px);
 
-    transition:.35s ease;
+    padding:
+        clamp(5px, 1vw, 14px)
+        clamp(6px, 1.2vw, 16px);
 
-}
+    display: flex;
+
+    align-items: center;
 
-.stat-card:hover{
+    justify-content: space-between;
 
-    background:rgba(255,255,255,.05);
+    gap: 5px;
 
+    background: #ffffff;
+
+    box-sizing: border-box;
 }
 
-/*==================================
-RESPONSIVE
-==================================*/
 
-@media(max-width:1200px){
+.card-footer h3 {
 
-.container{
+    margin: 0;
 
-max-width:1140px;
+    padding: 0;
 
-}
+    min-width: 0;
 
-.section-title h2{
+    color: #071D56;
 
-font-size:36px;
+    font-size: clamp(7px, 1.1vw, 16px);
 
-}
+    line-height: 1.3;
 
+    font-weight: 600;
+
+    overflow-wrap: anywhere;
 }
 
-@media(max-width:992px){
 
-.container{
+.card-footer span {
 
-max-width:960px;
+    flex-shrink: 0;
 
-}
+    color: #D62828;
 
-.section-title{
+    font-size: clamp(12px, 1.6vw, 24px);
 
-text-align:center;
+    line-height: 1;
 
+    font-weight: 500;
 }
 
-.title-top{
 
-justify-content:center;
+/* =========================================================
+                    VIEW ALL BUTTON
+========================================================= */
 
-}
+.button-area {
 
-.section-title h2{
+    width: 100%;
 
-font-size:32px;
+    display: flex;
 
-}
+    justify-content: center;
 
+    align-items: center;
+
+    margin-top: clamp(20px, 3vw, 40px);
 }
 
-@media(max-width:768px){
 
-.container{
+.button-area a {
 
-padding:0 18px;
+    display: inline-flex;
 
-}
+    align-items: center;
 
-.section-title{
+    justify-content: center;
 
-margin-bottom:35px;
+    gap: clamp(4px, 0.7vw, 9px);
 
-}
+    min-height: clamp(30px, 3.5vw, 48px);
 
-.section-title h2{
+    padding:
+        0 clamp(12px, 2vw, 25px);
 
-font-size:28px;
+    border-radius: clamp(4px, 0.5vw, 7px);
 
-}
+    background: #D62828;
 
-.button-area a{
+    color: #ffffff;
 
-width:100%;
+    text-decoration: none;
 
-justify-content:center;
+    font-size: clamp(7px, 0.9vw, 14px);
 
-}
+    font-weight: 600;
 
+    white-space: nowrap;
+
+    transition: 0.3s ease;
 }
 
-@media(max-width:480px){
 
-.container{
+.button-area a:hover {
 
-padding:0 15px;
+    background: #b51f1f;
 
+    transform: translateY(-2px);
 }
 
-.export-section{
 
-padding:50px 0;
+.button-area i {
 
+    font-size: clamp(8px, 1vw, 15px);
 }
 
-.certification-section{
 
-padding:45px 0;
+/* =========================================================
+                CERTIFICATION SECTION
+========================================================= */
 
-}
+.certification-section {
 
-.section-title h2{
+    width: 100%;
 
-font-size:24px;
+    padding-top: clamp(25px, 4vw, 65px);
 
-}
+    padding-bottom: clamp(25px, 4vw, 65px);
 
-.title-top span{
+    background: #fff;
 
-font-size:12px;
+    overflow: hidden;
 
+    box-sizing: border-box;
 }
 
-.line{
 
-width:40px;
+/* =========================================================
+                CERTIFICATION GRID
+========================================================= */
 
-}
+.certificate-grid {
 
-}
+    width: 100%;
 
-/*=========================
-GLOBAL
-=========================*/
+    display: grid;
 
-.container{
-    max-width:1320px;
-    margin:auto;
-    padding:0 20px;
-}
+    /*
+       3 COLUMNS ALWAYS
+    */
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
-.export-section{
-    padding:70px 0;
-    background:#fff;
+    gap: clamp(8px, 1.8vw, 25px);
+
+    align-items: stretch;
 }
 
-/*=========================
-TITLE
-=========================*/
 
-.section-title{
-    margin-bottom:35px;
-}
+/* =========================================================
+                CERTIFICATION CARD
+========================================================= */
 
-.title-top{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    margin-bottom:10px;
-}
+.certificate-card {
 
-.title-top span{
+    width: 100%;
 
-    color:#df2d2d;
+    min-width: 0;
 
-    font-size:13px;
+    min-height: clamp(90px, 12vw, 180px);
 
-    font-weight:700;
+    padding:
+        clamp(8px, 1.5vw, 22px);
 
-    letter-spacing:1px;
+    display: flex;
 
-}
+    flex-direction: column;
 
-.line{
+    align-items: center;
 
-    width:60px;
+    justify-content: center;
 
-    height:2px;
+    text-align: center;
 
-    background:#df2d2d;
+    background: #ffffff;
 
-}
+    border-radius: clamp(5px, 0.7vw, 12px);
+
+    border: 1px solid #eeeeee;
 
-.section-title h2{
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.05);
 
-    color:#0b2b63;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 
-    font-size:40px;
+    box-sizing: border-box;
+}
+
 
-    font-weight:700;
+.certificate-card:hover {
 
-    margin:0;
+    transform: translateY(-4px);
 
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.10);
 }
+
+
+/* =========================================================
+                CERTIFICATION IMAGE
+========================================================= */
+
+.certificate-card img {
 
-/*=========================
-GRID
-=========================*/
+    display: block;
 
-.product-grid{
+    width: clamp(45px, 7vw, 100px);
 
-    display:grid;
+    height: clamp(45px, 7vw, 100px);
 
-    grid-template-columns:repeat(6,1fr);
+    object-fit: contain;
 
-    gap:18px;
+    margin-bottom: clamp(5px, 1vw, 12px);
 
+    flex-shrink: 0;
 }
 
-/*=========================
-CARD
-=========================*/
 
-.product-card{
+/* =========================================================
+                CERTIFICATION TITLE
+========================================================= */
 
-    background:#fff;
+.certificate-card h4 {
 
-    border-radius:10px;
+    width: 100%;
 
-    overflow:hidden;
+    margin: 0;
 
-    border:1px solid #ececec;
+    padding: 0;
 
-    cursor:pointer;
+    color: #071D56;
 
-    transition:.35s;
+    font-size: clamp(7px, 1vw, 15px);
 
+    line-height: 1.35;
+
+    font-weight: 600;
+
+    overflow-wrap: anywhere;
 }
 
-.product-card:hover{
 
-    transform:translateY(-8px);
+/* =========================================================
+                    STATISTICS
+========================================================= */
 
-    box-shadow:0 15px 35px rgba(0,0,0,.12);
+.stats-section {
 
-}
+    width: 100%;
 
-/*=========================
-IMAGE
-=========================*/
+    padding-top: clamp(20px, 4vw, 60px);
 
-.image-box{
+    padding-bottom: clamp(20px, 4vw, 60px);
 
-    position:relative;
+    background: #071D56;
 
-    overflow:hidden;
+    overflow: hidden;
 
+    box-sizing: border-box;
 }
 
-.image-box img{
 
-    width:100%;
+/* =========================================================
+                    STATS GRID
+========================================================= */
 
-    height:170px;
+.stats-grid {
 
-    object-fit:cover;
+    width: 100%;
 
-    display:block;
+    display: grid;
 
-    transition:.4s;
+    /*
+       KEEP 4 COLUMNS
+       AT ALL RESOLUTIONS
+    */
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
 
+    gap: clamp(7px, 2vw, 30px);
 }
 
-.product-card:hover img{
 
-    transform:scale(1.08);
+/* =========================================================
+                    STAT CARD
+========================================================= */
 
-}
+.stat-card {
+
+    width: 100%;
+
+    min-width: 0;
+
+    padding:
+        clamp(10px, 2vw, 25px)
+        clamp(5px, 1.5vw, 20px);
+
+    display: flex;
+
+    align-items: center;
 
-/*=========================
-ICON
-=========================*/
+    justify-content: center;
 
-.icon-box{
+    gap: clamp(5px, 1vw, 15px);
 
-    position:absolute;
+    border:
+        1px solid rgba(255,255,255,0.15);
 
-    bottom:-18px;
+    border-radius:
+        clamp(5px, 0.7vw, 12px);
 
-    left:16px;
+    background:
+        rgba(255,255,255,0.04);
 
-    width:42px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+                    STAT ICON
+========================================================= */
+
+.stat-icon {
 
-    height:42px;
+    width: clamp(25px, 4vw, 60px);
 
-    background:#fff;
+    height: clamp(25px, 4vw, 60px);
 
-    border-radius:50%;
+    flex-shrink: 0;
 
-    display:flex;
+    display: flex;
 
-    align-items:center;
+    align-items: center;
 
-    justify-content:center;
+    justify-content: center;
 
-    box-shadow:0 4px 15px rgba(0,0,0,.15);
+    color: #D62828;
 
+    font-size: clamp(14px, 2vw, 30px);
 }
 
-.icon-box img{
 
-    width:22px;
+/* =========================================================
+                    STAT CONTENT
+========================================================= */
 
-    height:22px;
+.stat-content {
 
-    object-fit:contain;
+    min-width: 0;
 
+    text-align: left;
 }
 
-/*=========================
-FOOTER
-=========================*/
 
-.card-footer{
+.stat-content h2 {
 
-    padding:28px 16px 15px;
+    margin: 0;
 
-    display:flex;
+    padding: 0;
 
-    justify-content:space-between;
+    color: #ffffff;
 
-    align-items:center;
+    font-size: clamp(16px, 2.5vw, 38px);
 
+    line-height: 1.05;
+
+    font-weight: 700;
 }
+
 
-.card-footer h3{
+.stat-content h4 {
 
-    font-size:15px;
+    margin:
+        clamp(2px, 0.4vw, 5px)
+        0;
 
-    color:#12366f;
+    padding: 0;
 
-    margin:0;
+    color: #ffffff;
 
-    font-weight:600;
+    font-size: clamp(7px, 1vw, 15px);
 
+    line-height: 1.3;
+
+    font-weight: 600;
+
+    overflow-wrap: anywhere;
 }
 
-.card-footer span{
 
-    color:#df2d2d;
+.stat-content p {
 
-    font-size:20px;
+    margin: 0;
 
-    transition:.3s;
+    padding: 0;
 
-}
+    color: #d8dce8;
 
-.product-card:hover span{
+    font-size: clamp(5.5px, 0.8vw, 12px);
 
-    transform:translateX(5px);
+    line-height: 1.3;
 
+    overflow-wrap: anywhere;
 }
 
-/*=========================
-BUTTON
-=========================*/
 
-.button-area{
+/* =========================================================
+                1200px - 1599px
+========================================================= */
 
-    text-align:center;
+@media (max-width: 1599px) and (min-width: 1200px) {
 
-    margin-top:35px;
+    .product-grid {
+        gap: 22px;
+    }
 
+    .certificate-grid {
+        gap: 18px;
+    }
+
+    .stats-grid {
+        gap: 20px;
+    }
 }
 
-.button-area a{
 
-    display:inline-flex;
+/* =========================================================
+                769px - 1199px
+=========================================================
 
-    align-items:center;
+   STILL SAME GRID STRUCTURE
+========================================================= */
 
-    gap:10px;
+@media (max-width: 1199px) and (min-width: 769px) {
 
-    background:#123d91;
+    .product-grid {
 
-    color:#fff;
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
 
-    padding:14px 35px;
+        gap: 14px;
+    }
 
-    border-radius:8px;
 
-    text-decoration:none;
+    .certificate-grid {
 
-    font-weight:600;
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
 
-    transition:.3s;
+        gap: 12px;
+    }
 
-}
 
-.button-area a:hover{
+    .stats-grid {
 
-    background:#0b2b63;
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
 
+        gap: 12px;
+    }
 }
 
-/*=========================
-LAPTOP
-=========================*/
 
-@media(max-width:1200px){
+/* =========================================================
+                600px - 768px
+=========================================================
 
-.product-grid{
+       DO NOT STACK
+========================================================= */
 
-grid-template-columns:repeat(4,1fr);
+@media (max-width: 768px) and (min-width: 600px) {
 
-}
+    .container {
 
-}
+        padding-left: 12px;
 
-/*=========================
-TABLET
-=========================*/
+        padding-right: 12px;
+    }
 
-@media(max-width:992px){
 
-.section-title h2{
+    .product-grid {
 
-font-size:34px;
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
 
-}
+        gap: 9px;
+    }
 
-.product-grid{
 
-grid-template-columns:repeat(3,1fr);
+    .certificate-grid {
 
-}
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 8px;
+    }
+
 
+    .stats-grid {
+
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+
+        gap: 7px;
+    }
 }
 
-/*=========================
-MOBILE
-=========================*/
 
-@media(max-width:768px){
+/* =========================================================
+                480px - 599px
+========================================================= */
 
-.product-grid{
+@media (max-width: 599px) and (min-width: 481px) {
 
-grid-template-columns:repeat(2,1fr);
+    .container {
 
-gap:15px;
+        padding-left: 8px;
 
-}
+        padding-right: 8px;
+    }
 
-.image-box img{
 
-height:160px;
+    .product-grid {
 
-}
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
 
-}
+        gap: 6px;
+    }
 
-/*=========================
-SMALL MOBILE
-=========================*/
 
-@media(max-width:480px){
+    .certificate-grid {
 
-.export-section{
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
 
-padding:50px 0;
+        gap: 6px;
+    }
 
-}
 
-.section-title{
+    .stats-grid {
 
-text-align:center;
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
 
+        gap: 5px;
+    }
 }
 
-.title-top{
 
-justify-content:center;
+/* =========================================================
+                    360px - 480px
+=========================================================
 
-}
+             IMPORTANT MOBILE RULE
 
-.section-title h2{
+       4 PRODUCTS = 4 COLUMNS
+       3 CERTIFICATES = 3 COLUMNS
+       4 STATS = 4 COLUMNS
 
-font-size:28px;
+       EVERYTHING SHRINKS
+========================================================= */
 
-}
+@media (max-width: 480px) {
 
-.product-grid{
+    .container {
 
-grid-template-columns:1fr;
+        width: 100%;
 
-}
+        padding-left: 5px;
 
-.image-box img{
+        padding-right: 5px;
+    }
 
-height:220px;
 
-}
+    /* ===============================
+             EXPORT SECTION
+    =============================== */
 
-.card-footer h3{
+    .export-section {
 
-font-size:17px;
+        padding-top: 18px;
 
-}
+        padding-bottom: 18px;
+    }
 
-.button-area a{
 
-width:100%;
+    .section-title {
 
-justify-content:center;
+        margin-bottom: 15px;
+    }
 
-}
 
-}
+    .title-top {
 
-/*==================================
-CERTIFICATION SECTION
-==================================*/
+        gap: 5px;
 
-.certification-section{
+        margin-bottom: 5px;
+    }
 
-    padding:60px 0;
 
-    background:#fff;
+    .title-top span {
 
-}
+        font-size: 6px;
+    }
 
-.certificate-grid{
 
-    display:grid;
+    .title-top .line {
 
-    grid-template-columns:repeat(5,1fr);
+        width: 25px;
 
-    gap:18px;
+        height: 1px;
+    }
 
-    margin-top:25px;
 
-}
+    .section-title h2 {
 
-.certificate-card{
+        font-size: 15px;
+    }
 
-    background:#fff;
 
-    border:1px solid #ececec;
+    .product-grid {
 
-    border-radius:10px;
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
 
-    min-height:125px;
+        gap: 4px;
+    }
 
-    padding:22px 15px;
 
-    display:flex;
+    .product-card {
 
-    flex-direction:column;
+        border-radius: 3px;
 
-    justify-content:center;
+        box-shadow:
+            0 2px 7px rgba(0,0,0,0.06);
+    }
 
-    align-items:center;
 
-    text-align:center;
+    .card-footer {
 
-    transition:.35s;
+        min-height: 25px;
 
-    box-shadow:0 2px 10px rgba(0,0,0,.05);
+        padding: 3px 4px;
+    }
 
-}
 
-.certificate-card:hover{
+    .card-footer h3 {
 
-    transform:translateY(-6px);
+        font-size: 5.5px;
+    }
 
-    box-shadow:0 12px 28px rgba(0,0,0,.12);
 
-}
+    .card-footer span {
 
-.certificate-card img{
+        font-size: 9px;
+    }
 
-    width:72px;
 
-    height:72px;
+    .button-area {
 
-    object-fit:contain;
+        margin-top: 15px;
+    }
 
-    margin-bottom:14px;
 
-}
+    .button-area a {
 
-.certificate-card h4{
+        min-height: 27px;
 
-    margin:0;
+        padding: 0 10px;
 
-    color:#12366f;
+        font-size: 6.5px;
 
-    font-size:15px;
+        border-radius: 3px;
+    }
 
-    font-weight:600;
 
-    line-height:1.4;
+    /* ===============================
+          CERTIFICATIONS
+    =============================== */
 
-}
+    .certification-section {
 
-.certificate-card p{
+        padding-top: 18px;
 
-    margin-top:6px;
+        padding-bottom: 18px;
+    }
 
-    color:#666;
 
-    font-size:13px;
+    .certificate-grid {
 
-    line-height:18px;
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
 
-}
+        gap: 4px;
+    }
 
-/*==============================
-Responsive
-==============================*/
 
-@media(max-width:1200px){
+    .certificate-card {
 
-.certificate-grid{
+        min-height: 75px;
 
-grid-template-columns:repeat(4,1fr);
+        padding: 5px 3px;
 
-}
+        border-radius: 3px;
+    }
 
-}
 
-@media(max-width:992px){
+    .certificate-card img {
 
-.certificate-grid{
+        width: 38px;
 
-grid-template-columns:repeat(3,1fr);
+        height: 38px;
 
-}
+        margin-bottom: 4px;
+    }
 
-}
 
-@media(max-width:768px){
+    .certificate-card h4 {
 
-.certificate-grid{
+        font-size: 5.5px;
 
-grid-template-columns:repeat(2,1fr);
+        line-height: 1.25;
+    }
 
-gap:15px;
 
-}
+    /* ===============================
+               STATISTICS
+    =============================== */
 
-.certificate-card{
+    .stats-section {
 
-min-height:120px;
+        padding-top: 15px;
 
-}
+        padding-bottom: 15px;
+    }
 
-}
 
-@media(max-width:480px){
+    .stats-grid {
 
-.certification-section{
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
 
-padding:45px 0;
+        gap: 3px;
+    }
 
-}
 
-.certificate-grid{
+    .stat-card {
 
-grid-template-columns:1fr;
+        padding: 7px 2px;
 
-}
+        gap: 2px;
 
-.certificate-card{
+        border-radius: 3px;
 
-padding:25px;
+        flex-direction: column;
 
-}
+        text-align: center;
+    }
 
-.certificate-card img{
 
-width:60px;
+    .stat-icon {
 
-height:60px;
+        width: 22px;
 
-}
+        height: 22px;
 
-.certificate-card h4{
+        font-size: 12px;
+    }
 
-font-size:16px;
 
-}
+    .stat-content {
 
-}
-/*==================================
-STATISTICS
-==================================*/
+        text-align: center;
 
-.stats-section{
+        width: 100%;
+    }
 
-    background:#081f56;
 
-    padding:28px 0;
+    .stat-content h2 {
 
-}
+        font-size: 15px;
+    }
+
 
-.stats-grid{
+    .stat-content h4 {
 
-    display:grid;
+        font-size: 5.5px;
 
-    grid-template-columns:repeat(4,1fr);
+        margin-top: 2px;
+    }
 
+
+    .stat-content p {
+
+        font-size: 4.5px;
+
+        margin-top: 1px;
+    }
 }
 
-.stat-card{
 
-    display:flex;
+/* =========================================================
+                    BELOW 360px
+========================================================= */
 
-    align-items:center;
+@media (max-width: 360px) {
 
-    justify-content:center;
+    .container {
 
-    gap:18px;
+        padding-left: 4px;
 
-    padding:15px 20px;
+        padding-right: 4px;
+    }
 
-    border-right:1px solid rgba(255,255,255,.15);
 
-}
+    /* ===============================
+             EXPORT
+    =============================== */
 
-.stat-card:last-child{
+    .export-section {
 
-    border-right:none;
+        padding-top: 14px;
 
-}
+        padding-bottom: 14px;
+    }
 
-.stat-icon{
 
-    width:58px;
+    .section-title {
 
-    height:58px;
+        margin-bottom: 11px;
+    }
 
-    display:flex;
 
-    justify-content:center;
+    .title-top span {
 
-    align-items:center;
+        font-size: 5px;
+    }
 
-    color:#ef3d3d;
 
-    font-size:34px;
+    .title-top .line {
 
-    flex-shrink:0;
+        width: 18px;
+    }
 
-}
 
-.stat-content h2{
+    .section-title h2 {
 
-    color:#fff;
+        font-size: 12px;
+    }
 
-    margin:0;
 
-    font-size:38px;
+    .product-grid {
 
-    font-weight:700;
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
 
-    line-height:1;
+        gap: 3px;
+    }
 
-}
 
-.stat-content h4{
+    .card-footer {
 
-    margin:6px 0 3px;
+        min-height: 20px;
 
-    color:#fff;
+        padding: 2px 3px;
+    }
 
-    font-size:16px;
 
-    font-weight:600;
+    .card-footer h3 {
 
-}
+        font-size: 4.5px;
+    }
 
-.stat-content p{
 
-    margin:0;
+    .card-footer span {
 
-    color:#cfd6e4;
+        font-size: 7px;
+    }
 
-    font-size:13px;
 
-}
+    .button-area {
 
-/*=========================
-Hover
-=========================*/
+        margin-top: 10px;
+    }
 
-.stat-card:hover .stat-icon{
 
-    transform:scale(1.1);
+    .button-area a {
 
-    transition:.3s;
+        min-height: 23px;
 
-}
+        padding: 0 7px;
 
-/*=========================
-Laptop
-=========================*/
+        font-size: 5.5px;
+    }
 
-@media(max-width:1200px){
 
-.stats-grid{
+    /* ===============================
+          CERTIFICATIONS
+    =============================== */
 
-grid-template-columns:repeat(2,1fr);
+    .certification-section {
 
-}
+        padding-top: 14px;
 
-.stat-card{
+        padding-bottom: 14px;
+    }
 
-border-right:none;
 
-border-bottom:1px solid rgba(255,255,255,.15);
+    .certificate-grid {
 
-padding:25px;
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
 
-}
+        gap: 3px;
+    }
 
-}
 
-/*=========================
-Tablet
-=========================*/
+    .certificate-card {
 
-@media(max-width:768px){
+        min-height: 62px;
 
-.stats-grid{
+        padding: 3px 2px;
+    }
 
-grid-template-columns:1fr;
 
-}
+    .certificate-card img {
 
-.stat-card{
+        width: 30px;
 
-justify-content:flex-start;
+        height: 30px;
 
-padding:22px;
+        margin-bottom: 2px;
+    }
 
-}
 
-}
+    .certificate-card h4 {
 
-/*=========================
-Mobile
-=========================*/
+        font-size: 4.5px;
 
-@media(max-width:480px){
+        line-height: 1.2;
+    }
 
-.stats-section{
 
-padding:20px 0;
+    /* ===============================
+               STATISTICS
+    =============================== */
 
-}
+    .stats-section {
 
-.stat-card{
+        padding-top: 12px;
 
-flex-direction:column;
+        padding-bottom: 12px;
+    }
 
-text-align:center;
 
-justify-content:center;
+    .stats-grid {
 
-gap:10px;
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
 
-}
+        gap: 2px;
+    }
 
-.stat-content h2{
 
-font-size:32px;
+    .stat-card {
 
-}
+        padding: 5px 1px;
 
-.stat-content h4{
+        gap: 1px;
 
-font-size:15px;
+        border-radius: 2px;
+    }
 
-}
 
-.stat-content p{
+    .stat-icon {
 
-font-size:12px;
+        width: 18px;
 
-}
+        height: 18px;
 
-.stat-icon{
+        font-size: 9px;
+    }
 
-font-size:30px;
 
-width:50px;
+    .stat-content h2 {
 
-height:50px;
+        font-size: 12px;
+    }
 
-}
+
+    .stat-content h4 {
+
+        font-size: 4px;
+
+        margin-top: 1px;
+    }
+
+
+    .stat-content p {
 
+        font-size: 3.5px;
+    }
 }
