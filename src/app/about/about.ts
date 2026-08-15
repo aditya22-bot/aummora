@@ -1,0 +1,14 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router'
+import { Footer } from '../footer/footer';
+@Component({
+  selector: 'app-about',
+  standalone: true,
+  imports: [CommonModule, RouterModule,Footer],
+  templateUrl: './about.html',
+  styleUrl: './about.scss',
+})
+export class About {
+
+}

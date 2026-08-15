@@ -1,0 +1,55 @@
+.services-wrapper {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.service-box {
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: .3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+}
+
+.service-icon {
+  font-size: 42px;
+  color: #f39c12;
+  margin-bottom: 10px;
+}
+
+.view-btn {
+  margin-top: 30px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  background: #f39c12;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.view-btn:hover {
+  background: #d88910;
+}

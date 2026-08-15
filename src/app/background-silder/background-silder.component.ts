@@ -1,21 +1,24 @@
 import { Component, signal, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Products } from '../products/products';
+import { RouterModule } from '@angular/router';
+import { ProductCategories } from '../product-categories/product-categories';
 
 @Component({
   selector: 'app-background-silder',
   standalone: true,
-  imports: [CommonModule,Products],
+  imports: [CommonModule,RouterModule,ProductCategories,],
   templateUrl: './background-silder.component.html',
   styleUrls: ['./background-silder.component.scss'],
 })
 export class BackgroundSilder implements OnInit {
 
   images = [
-    'assets/images/page1.jpg',
-  'assets/images/page2.jpg',
-  'assets/images/page3.jpg',
-  'assets/images/page4.jpg'
+  'assets/images/background_silder_1.jpg',
+  'assets/images/background_silder_2.jpg',
+  // 'assets/images/background_silder_3.jpg',
+  // 'assets/images/background_silder_4.jpg',
+  // 'assets/images/background_silder_5.jpg',
 ];
 
   currentIndex = signal(0);

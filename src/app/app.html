@@ -1,2 +1,74 @@
-<app-headers></app-headers>
+<!-- =========================================================
+     AUMORRA HEADER
+========================================================= -->
+
+<header class="aumorra-header">
+  <div class="container">
+    <div class="header-wrapper">
+      <!-- =================================================
+           LOGO
+      ================================================== -->
+
+      <div class="logo">
+        <a routerLink="/">
+          <img src="/assets/icons/logo.png" alt="Aumorra International" class="logo-img" />
+        </a>
+      </div>
+
+      <!-- =================================================
+           NAVIGATION
+      ================================================== -->
+
+      <nav class="nav-links" [class.mobile-open]="mobileMenuOpen">
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="closeMenu()"
+        >
+          Home
+        </a>
+
+        <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()"> About Us </a>
+
+        <a routerLink="/products" routerLinkActive="active" (click)="closeMenu()"> Products </a>
+
+        <a routerLink="/services" routerLinkActive="active" (click)="closeMenu()"> Services </a>
+
+        <a routerLink="/csr" routerLinkActive="active" (click)="closeMenu()"> CSR </a>
+
+        <a routerLink="/careers" routerLinkActive="active" (click)="closeMenu()"> Careers </a>
+
+        <a routerLink="/contact-us" routerLinkActive="active" (click)="closeMenu()"> Contact Us </a>
+      </nav>
+
+      <!-- =================================================
+           GET A QUOTE BUTTON
+      ================================================== -->
+
+      <div class="header-action">
+        <a routerLink="/contact-us" class="quote-btn">
+          Get a Quote
+          <span>→</span>
+        </a>
+      </div>
+
+      <!-- =================================================
+           MOBILE MENU BUTTON
+      ================================================== -->
+
+      <button
+        type="button"
+        class="mobile-menu-btn"
+        [class.open]="mobileMenuOpen"
+        (click)="toggleMenu()"
+        aria-label="Toggle navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
 <router-outlet></router-outlet>

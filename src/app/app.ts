@@ -1,14 +1,22 @@
 // app.ts
 import { Component } from '@angular/core';
-import { HeadersComponent } from './aumora-dashbord/headers/headers';
-import { RouterOutlet } from '@angular/router';
+// import { HeadersComponent } from './aumora-dashbord/headers/headers';
+import { RouterOutlet,RouterLink, RouterModule  } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
-   imports: [RouterOutlet, HeadersComponent],
+    imports: [RouterModule],
   templateUrl: './app.html',
   styleUrls: ['./app.scss']
 })
 export class AppComponent {
-  
+  mobileMenuOpen = false;
+
+  toggleMenu(): void {
+  this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
+  closeMenu(): void {
+  this.mobileMenuOpen = false;
+  }
 }

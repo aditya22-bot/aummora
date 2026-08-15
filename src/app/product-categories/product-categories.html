@@ -1,0 +1,178 @@
+<section class="export-section">
+  <div class="container">
+    <div class="section-title">
+      <div class="title-top">
+        <span>WHAT WE EXPORT</span>
+        <div class="line"></div>
+      </div>
+
+      <h2>Premium Products. Global Standards.</h2>
+    </div>
+
+    <div class="product-grid">
+      @for (product of categories; track product.id) {
+        <div class="product-card" (click)="goToCategory(product.id)">
+          <div class="image-box">
+            <img [src]="product.image" [alt]="product.name" />
+
+            <!-- <div class="icon-box"> -->
+            <!-- <img [src]="product.icon" [alt]="product.name" /> -->
+            <!-- </div> -->
+          </div>
+
+          <div class="card-footer">
+            <h3>{{ product.name }}</h3>
+
+            <span>→</span>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="button-area">
+      <a routerLink="/products">
+        View All Products
+        <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+<!--=========================================
+CERTIFICATIONS
+==========================================-->
+
+<section class="certification-section">
+  <div class="container">
+    <div class="section-title">
+      <div class="title-top">
+        <span>OUR CERTIFICATIONS & COMPLIANCE</span>
+        <div class="line"></div>
+      </div>
+    </div>
+
+    <div class="certificate-grid">
+      <!-- IEC -->
+      <div class="certificate-card">
+        <img src="assets/icons/certification logos/IEC.png" alt="IEC" />
+        <h4>Import Export Code</h4>
+      </div>
+
+      <!-- GST -->
+      <div class="certificate-card">
+        <img src="assets/icons/certification logos/GST.png" alt="GST" />
+        <h4>GST</h4>
+      </div>
+
+      <!-- MSME -->
+      <div class="certificate-card">
+        <img src="assets/icons/certification logos/MSME.png" alt="MSME" />
+        <h4>MSME Registration</h4>
+      </div>
+
+      <!-- FSSAI -->
+      <div class="certificate-card">
+        <img src="assets/icons/certification logos/FSSAI.png" alt="FSSAI" />
+        <h4>FSSAI</h4>
+      </div>
+
+      <!-- APEDA -->
+      <div class="certificate-card">
+        <img src="assets/icons/certification logos/APEDA.png" alt="APEDA" />
+        <h4>APEDA</h4>
+      </div>
+
+      <!-- Export Packaging -->
+      <div class="certificate-card">
+        <img
+          src="assets/icons/certification logos/Export Packaging Compliance.png"
+          alt="Packaging"
+        />
+        <h4>Export Packaging Compliance</h4>
+      </div>
+
+      <!-- Phytosanitary -->
+      <div class="certificate-card">
+        <img src="assets/icons/certification logos/Phytosanitary.png" alt="Phytosanitary" />
+        <h4>Phytosanitary Support</h4>
+        <!-- <p>(Plant / Herbal Goods)</p> -->
+      </div>
+
+      <!-- Shop Act -->
+      <div class="certificate-card">
+        <img src="assets/icons/certification logos/Shop Act.png" alt="Shop Act" />
+        <h4>Shop Act Registration</h4>
+        <!-- <p>Maharashtra Government</p> -->
+      </div>
+      <div class="certificate-card">
+        <img src="assets/icons/certification logos/spice_board.png" alt="Shop Act" />
+        <h4>Spice Board</h4>
+        <!-- <p>Maharashtra Government</p> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--=========================================
+STATISTICS SECTION
+==========================================-->
+
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <!-- Countries -->
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="bi bi-globe2"></i>
+        </div>
+
+        <div class="stat-content">
+          <h2>20+</h2>
+          <h4>Countries Served</h4>
+          <p>Across 4 Continents</p>
+        </div>
+      </div>
+
+      <!-- Products -->
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="bi bi-box-seam"></i>
+        </div>
+
+        <div class="stat-content">
+          <h2>100+</h2>
+          <h4>Products</h4>
+          <p>Diverse Range</p>
+        </div>
+      </div>
+
+      <!-- Clients -->
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="bi bi-people"></i>
+        </div>
+
+        <div class="stat-content">
+          <h2>50+</h2>
+          <h4>Happy Clients</h4>
+          <p>Worldwide</p>
+        </div>
+      </div>
+
+      <!-- Shipments -->
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="bi bi-truck"></i>
+        </div>
+
+        <div class="stat-content">
+          <h2>100+</h2>
+          <h4>Shipments</h4>
+          <p>Delivered Successfully</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="footeer">
+  <app-footer></app-footer>
+</div>
