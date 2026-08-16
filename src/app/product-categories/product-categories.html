@@ -11,7 +11,8 @@
 
     <div class="product-grid">
       @for (product of categories; track product.id) {
-        <div class="product-card" (click)="goToCategory(product.id)">
+        <!-- <div class="product-card" (click)="goToCategory(product.id)"> -->
+        <div class="product-card">
           <div class="image-box">
             <img [src]="product.image" [alt]="product.name" />
 
