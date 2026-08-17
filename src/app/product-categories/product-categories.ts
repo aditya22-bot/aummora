@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Footer } from '../footer/footer';
+import { Products } from '../products/products';
 
 @Component({
   selector: 'app-product-categories',
-  imports: [Footer],
+  imports: [Footer,Products],
   templateUrl: './product-categories.html',
   styleUrl: './product-categories.scss',
 })
