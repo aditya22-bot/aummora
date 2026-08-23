@@ -29,6 +29,9 @@ img {
 }
 
 button,
+input,
+textarea,
+select,
 a {
     font-family: inherit;
 }
@@ -36,11 +39,6 @@ a {
 button {
     cursor: pointer;
 }
-
-
-/* =========================================================
-   GLOBAL CONTAINER
-========================================================= */
 
 .container {
     width: min(92%, 1200px);
@@ -51,13 +49,12 @@ button {
 
 /* =========================================================
    STATS SECTION
-   ALWAYS 4 COLUMNS
 ========================================================= */
 
 .stats-section {
     width: 100%;
     background: #071d56;
-    padding: clamp(12px, 1.5vw, 22px) 0;
+    padding: clamp(14px, 1.5vw, 22px) 0;
     overflow: hidden;
 }
 
@@ -69,14 +66,8 @@ button {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
 
-    gap: 0;
     align-items: center;
 }
-
-
-/* =========================================================
-   STAT ITEM
-========================================================= */
 
 .stat-item {
     min-width: 0;
@@ -84,11 +75,11 @@ button {
     display: flex;
     align-items: center;
 
-    gap: clamp(7px, 1.2vw, 18px);
+    gap: clamp(8px, 1.2vw, 18px);
 
     padding:
-        clamp(6px, 1vw, 12px)
-        clamp(8px, 2vw, 30px);
+        clamp(8px, 1vw, 12px)
+        clamp(10px, 2vw, 30px);
 
     position: relative;
 }
@@ -105,17 +96,17 @@ button {
 .stat-icon {
     flex-shrink: 0;
 
-    width: clamp(32px, 4vw, 65px);
-    height: clamp(32px, 4vw, 65px);
+    width: clamp(35px, 4vw, 65px);
+    height: clamp(35px, 4vw, 65px);
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 .stat-icon img {
-    width: clamp(25px, 3vw, 50px);
-    height: clamp(25px, 3vw, 50px);
+    width: clamp(27px, 3vw, 50px);
+    height: clamp(27px, 3vw, 50px);
 
     object-fit: contain;
 
@@ -148,6 +139,7 @@ button {
     color: #fff;
 
     line-height: 1;
+
     white-space: nowrap;
 }
 
@@ -158,6 +150,7 @@ button {
         clamp(2px, 0.4vw, 6px);
 
     font-size: clamp(10px, 1.35vw, 20px);
+
     color: #fff;
 
     font-weight: 600;
@@ -170,12 +163,10 @@ button {
 
     color: #d5d5d5;
 
-    font-size: clamp(8px, 1vw, 15px);
+    font-size: clamp(9px, 1vw, 15px);
+
     line-height: 1.4;
 }
-
-
-/* Hide old divider */
 
 .divider {
     display: none;
@@ -184,20 +175,12 @@ button {
 
 /* =========================================================
    PRODUCTS HERO
-   ALWAYS SAME STRUCTURE
 ========================================================= */
 
 .products-hero {
     position: relative;
 
-    height: clamp(260px, 30vw, 380px);
-
-    background-image:
-        url('/assets/images/products/product_banner.png');
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    height: clamp(280px, 30vw, 380px);
 
     display: flex;
     align-items: center;
@@ -205,44 +188,78 @@ button {
     overflow: hidden;
 }
 
+
+/* =========================================================
+   HERO BACKGROUND IMAGE
+========================================================= */
+
+.products-hero-bg {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+}
+
+.products-hero-bg img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+}
+
+
+/* =========================================================
+   HERO OVERLAY
+========================================================= */
+
 .hero-overlay {
     position: absolute;
     inset: 0;
 
-    background: linear-gradient(
-        90deg,
-        rgba(5, 24, 68, 0.92) 0%,
-        rgba(5, 24, 68, 0.82) 40%,
-        rgba(5, 24, 68, 0.15) 100%
-    );
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 24, 68, 0.92) 0%,
+            rgba(5, 24, 68, 0.82) 40%,
+            rgba(5, 24, 68, 0.15) 100%
+        );
 }
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
 
 .hero-content {
     position: relative;
+
     z-index: 2;
 
     min-width: 0;
 
     color: #fff;
 }
-
 .breadcrumb {
     display: flex;
     align-items: center;
 
-    gap: clamp(3px, 0.5vw, 6px);
+    gap: 6px;
 
-    margin-bottom: clamp(10px, 1.5vw, 20px);
+    margin-bottom: 18px;
 
     color: #d7d7d7;
 
-    font-size: clamp(9px, 1.1vw, 14px);
+    font-size: clamp(11px, 1.1vw, 14px);
 
     white-space: nowrap;
-}
-
-.breadcrumb span {
-    margin: 0;
 }
 
 .active {
@@ -254,7 +271,7 @@ button {
 
     width: min(100%, 520px);
 
-    font-size: clamp(26px, 4.5vw, 56px);
+    font-size: clamp(28px, 4.5vw, 56px);
 
     font-weight: 700;
 
@@ -265,12 +282,13 @@ button {
 
 .hero-line {
     width: clamp(45px, 7vw, 90px);
-    height: clamp(2px, 0.3vw, 4px);
+
+    height: 4px;
 
     background: #ef4444;
 
     margin:
-        clamp(12px, 2vw, 25px)
+        clamp(14px, 2vw, 25px)
         0;
 
     border-radius: 10px;
@@ -285,23 +303,16 @@ button {
 
     line-height: 1.7;
 
-    font-size: clamp(10px, 1.35vw, 17px);
+    font-size: clamp(12px, 1.35vw, 17px);
 }
 
 
 /* =========================================================
    PRODUCT INTRO
-   ALWAYS LEFT CONTENT + RIGHT BUTTON
 ========================================================= */
 
 .product-intro {
     width: 100%;
-
-    padding:
-        clamp(40px, 6vw, 70px)
-        0
-        clamp(30px, 4vw, 45px);
-
     overflow: hidden;
 }
 
@@ -311,13 +322,15 @@ button {
     display: flex;
 
     justify-content: space-between;
+
     align-items: center;
 
-    gap: clamp(15px, 4vw, 60px);
+    gap: clamp(20px, 4vw, 60px);
 }
 
 .intro-flex > div:first-child {
     min-width: 0;
+
     flex: 1 1 auto;
 }
 
@@ -330,7 +343,7 @@ button {
 
     letter-spacing: 1px;
 
-    font-size: clamp(9px, 1vw, 14px);
+    font-size: clamp(10px, 1vw, 14px);
 }
 
 .product-intro h2 {
@@ -340,7 +353,7 @@ button {
 
     color: #0b2b63;
 
-    font-size: clamp(22px, 3.3vw, 40px);
+    font-size: clamp(24px, 3.3vw, 40px);
 
     line-height: 1.2;
 
@@ -349,13 +362,14 @@ button {
 
 .product-intro p {
     width: 100%;
+
     max-width: 650px;
 
     margin: 0;
 
     color: #666;
 
-    font-size: clamp(10px, 1.25vw, 16px);
+    font-size: clamp(11px, 1.25vw, 16px);
 
     line-height: 1.7;
 }
@@ -370,16 +384,14 @@ button {
     border: none;
 
     padding:
-        clamp(9px, 1.2vw, 16px)
-        clamp(12px, 2vw, 28px);
+        12px
+        clamp(14px, 2vw, 28px);
 
-    border-radius: clamp(5px, 0.6vw, 8px);
+    border-radius: 7px;
 
-    font-size: clamp(9px, 1.1vw, 15px);
+    font-size: clamp(11px, 1.1vw, 15px);
 
     font-weight: 600;
-
-    cursor: pointer;
 
     white-space: nowrap;
 
@@ -397,15 +409,10 @@ button {
 
 /* =========================================================
    PRODUCT GRID
-   ALWAYS 4 COLUMNS
 ========================================================= */
 
 .products-section {
     width: 100%;
-
-    padding-bottom:
-        clamp(40px, 6vw, 70px);
-
     overflow: hidden;
 }
 
@@ -418,7 +425,7 @@ button {
         repeat(4, minmax(0, 1fr));
 
     gap:
-        clamp(8px, 2vw, 28px);
+        clamp(12px, 2vw, 28px);
 }
 
 
@@ -440,8 +447,8 @@ button {
 
     box-shadow:
         0
-        clamp(4px, 0.7vw, 8px)
-        clamp(15px, 2vw, 25px)
+        4px
+        18px
         rgba(0, 0, 0, 0.08);
 
     transition:
@@ -450,14 +457,12 @@ button {
 }
 
 .product-card:hover {
-    transform: translateY(
-        clamp(-4px, -0.5vw, -8px)
-    );
+    transform: translateY(-5px);
 
     box-shadow:
         0
-        clamp(8px, 1.5vw, 18px)
-        clamp(20px, 3vw, 40px)
+        10px
+        25px
         rgba(0, 0, 0, 0.16);
 }
 
@@ -469,7 +474,7 @@ button {
 .product-card > img {
     width: 100%;
 
-    height: clamp(90px, 15vw, 220px);
+    height: clamp(100px, 15vw, 220px);
 
     object-fit: cover;
 
@@ -485,7 +490,7 @@ button {
     min-width: 0;
 
     padding:
-        clamp(10px, 1.5vw, 22px);
+        clamp(12px, 1.5vw, 22px);
 }
 
 
@@ -494,8 +499,9 @@ button {
 ========================================================= */
 
 .product-icon {
-    width: clamp(32px, 4vw, 55px);
-    height: clamp(32px, 4vw, 55px);
+    width: clamp(35px, 4vw, 55px);
+
+    height: clamp(35px, 4vw, 55px);
 
     border-radius: 50%;
 
@@ -504,20 +510,21 @@ button {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
-    font-size: clamp(15px, 2vw, 26px);
+    font-size: clamp(16px, 2vw, 26px);
 
     margin-top:
         clamp(-25px, -3.5vw, -50px);
 
     margin-bottom:
-        clamp(8px, 1.3vw, 18px);
+        clamp(10px, 1.3vw, 18px);
 
     box-shadow:
         0
-        clamp(3px, 0.5vw, 5px)
-        clamp(8px, 1.5vw, 18px)
+        3px
+        12px
         rgba(0, 0, 0, 0.15);
 }
 
@@ -532,12 +539,12 @@ button {
     margin:
         0
         0
-        clamp(6px, 1vw, 12px);
+        clamp(7px, 1vw, 12px);
 
     color: #0b2b63;
 
     font-size:
-        clamp(12px, 1.7vw, 22px);
+        clamp(14px, 1.7vw, 22px);
 
     line-height: 1.25;
 
@@ -555,14 +562,14 @@ button {
     margin:
         0
         0
-        clamp(10px, 1.8vw, 25px);
+        clamp(12px, 1.8vw, 25px);
 
     color: #666;
 
     line-height: 1.6;
 
     font-size:
-        clamp(8px, 1.15vw, 15px);
+        clamp(10px, 1.15vw, 15px);
 }
 
 
@@ -578,7 +585,7 @@ button {
     font-weight: 600;
 
     font-size:
-        clamp(8px, 1vw, 15px);
+        clamp(10px, 1vw, 15px);
 
     transition: letter-spacing 0.3s ease;
 }
@@ -590,15 +597,10 @@ button {
 
 /* =========================================================
    PRODUCT CTA
-   ALWAYS LEFT CONTENT + RIGHT BUTTONS
 ========================================================= */
 
 .product-cta {
     width: 100%;
-
-    padding-bottom:
-        clamp(40px, 6vw, 80px);
-
     overflow: hidden;
 }
 
@@ -622,14 +624,16 @@ button {
 
 .cta-overlay {
     position: absolute;
+
     inset: 0;
 
-    background: linear-gradient(
-        90deg,
-        rgba(5, 24, 68, 0.95) 0%,
-        rgba(5, 24, 68, 0.82) 45%,
-        rgba(5, 24, 68, 0.25) 100%
-    );
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 24, 68, 0.95) 0%,
+            rgba(5, 24, 68, 0.82) 45%,
+            rgba(5, 24, 68, 0.25) 100%
+        );
 }
 
 .cta-content {
@@ -639,18 +643,13 @@ button {
 
     width: 100%;
 
-    padding:
-        clamp(25px, 4vw, 55px)
-        clamp(15px, 4vw, 60px);
-
     display: flex;
 
     justify-content: space-between;
 
     align-items: center;
 
-    gap:
-        clamp(15px, 4vw, 50px);
+    gap: clamp(15px, 4vw, 50px);
 }
 
 .cta-left {
@@ -665,7 +664,7 @@ button {
     color: #ff5a5a;
 
     font-size:
-        clamp(8px, 1vw, 13px);
+        clamp(10px, 1vw, 13px);
 
     font-weight: 700;
 
@@ -674,13 +673,14 @@ button {
 
 .cta-left h2 {
     margin:
-        clamp(6px, 1vw, 12px)
-        0;
+        6px
+        0
+        12px;
 
     color: #fff;
 
     font-size:
-        clamp(20px, 3.2vw, 42px);
+        clamp(22px, 3.2vw, 42px);
 
     line-height: 1.2;
 
@@ -695,7 +695,7 @@ button {
     line-height: 1.7;
 
     font-size:
-        clamp(9px, 1.15vw, 16px);
+        clamp(10px, 1.15vw, 16px);
 }
 
 
@@ -711,22 +711,21 @@ button {
     align-items: center;
 
     gap:
-        clamp(6px, 1.2vw, 18px);
+        clamp(8px, 1.2vw, 18px);
 }
 
 .btn-red,
 .btn-outline {
     padding:
-        clamp(8px, 1.2vw, 15px)
-        clamp(10px, 2vw, 32px);
+        10px
+        clamp(12px, 2vw, 32px);
 
-    border-radius:
-        clamp(5px, 0.6vw, 8px);
+    border-radius: 7px;
 
     cursor: pointer;
 
     font-size:
-        clamp(8px, 1.05vw, 15px);
+        clamp(10px, 1.05vw, 15px);
 
     font-weight: 600;
 
@@ -770,27 +769,25 @@ button {
 
 
 /* =========================================================
-   LARGE SCREEN
-   1400px+
+   LARGE DESKTOP
 ========================================================= */
 
 @media (min-width: 1400px) {
 
     .container {
         width: min(88%, 1320px);
+
         max-width: 1320px;
     }
 
     .stats-container {
         width: min(90%, 1400px);
     }
-
 }
 
 
 /* =========================================================
    LAPTOP
-   1200px
 ========================================================= */
 
 @media (max-width: 1200px) {
@@ -799,13 +796,59 @@ button {
         width: 92%;
     }
 
+    .product-grid {
+        gap: 15px;
+    }
 }
 
 
 /* =========================================================
    TABLET
-   IMPORTANT:
-   DO NOT STACK ANYTHING
+   769px - 900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .container {
+        width: 94%;
+    }
+
+    .product-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+    .product-card > img {
+        height: 150px;
+    }
+
+    .card-body {
+        padding: 12px;
+    }
+
+    .card-body h3 {
+        font-size: 16px;
+    }
+
+    .card-body p {
+        font-size: 11px;
+    }
+
+    .card-body a {
+        font-size: 11px;
+    }
+
+    .cta-content {
+        gap: 20px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE / TABLET
+   601px - 768px
 ========================================================= */
 
 @media (max-width: 768px) {
@@ -815,193 +858,276 @@ button {
     }
 
     /*
-       Everything intentionally remains
-       horizontal / 4 columns.
+       2 PRODUCT COLUMNS
+       Better readability on tablets/mobile
     */
-
-    .stats-container {
-        grid-template-columns:
-            repeat(4, minmax(0, 1fr));
-    }
 
     .product-grid {
         grid-template-columns:
-            repeat(4, minmax(0, 1fr));
+            repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+    .product-card > img {
+        height: 170px;
+    }
+
+    .card-body {
+        padding: 14px;
+    }
+
+    .card-body h3 {
+        font-size: 17px;
+    }
+
+    .card-body p {
+        font-size: 12px;
+
+        line-height: 1.55;
+    }
+
+    .card-body a {
+        font-size: 11px;
+    }
+
+    .product-icon {
+        width: 40px;
+        height: 40px;
+
+        margin-top: -20px;
     }
 
     .intro-flex {
-        flex-direction: row;
-        align-items: center;
+        gap: 20px;
     }
 
     .cta-content {
-        flex-direction: row;
-        align-items: center;
+        gap: 20px;
     }
 
     .cta-buttons {
-        flex-direction: row;
+        gap: 8px;
     }
-
 }
 
 
 /* =========================================================
    MOBILE
-   KEEP SAME DESKTOP STRUCTURE
+   481px - 600px
 ========================================================= */
 
 @media (max-width: 600px) {
 
     .container {
-        width: calc(100% - 18px);
+        width: calc(100% - 24px);
         max-width: none;
     }
 
+    /* -----------------------------------------
+       STATS
+    ----------------------------------------- */
+
     .stats-container {
-        width: calc(100% - 10px);
+        width: 100%;
+
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
     }
 
-    .product-grid {
-        gap: 7px;
+    .stat-item {
+        gap: 5px;
+
+        padding:
+            8px
+            5px;
     }
+
+    .stat-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .stat-icon img {
+        width: 23px;
+        height: 23px;
+    }
+
+    .stat-text h2 {
+        font-size: 18px;
+    }
+
+    .stat-text h4 {
+        font-size: 9px;
+    }
+
+    .stat-text p {
+        font-size: 7px;
+    }
+
+
+    /* -----------------------------------------
+       HERO
+    ----------------------------------------- */
+
+    .products-hero {
+        height: 330px;
+    }
+
+    .products-hero h1 {
+        font-size: 30px;
+    }
+
+    .products-hero p {
+        font-size: 12px;
+
+        line-height: 1.6;
+    }
+
+
+    /* -----------------------------------------
+       INTRO
+    ----------------------------------------- */
 
     .intro-flex {
+        gap: 12px;
+    }
+
+    .product-intro h2 {
+        font-size: 24px;
+    }
+
+    .product-intro p {
+        font-size: 11px;
+    }
+
+    .catalog-btn {
+        padding:
+            10px
+            12px;
+
+        font-size: 10px;
+    }
+
+
+    /* -----------------------------------------
+       PRODUCTS
+    ----------------------------------------- */
+
+    .product-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
         gap: 10px;
     }
+
+    .product-card {
+        border-radius: 8px;
+    }
+
+    .product-card > img {
+        height: 125px;
+    }
+
+    .card-body {
+        padding: 11px;
+    }
+
+    .product-icon {
+        width: 38px;
+        height: 38px;
+
+        margin-top: -19px;
+
+        margin-bottom: 8px;
+    }
+
+    .card-body h3 {
+        font-size: 15px;
+
+        line-height: 1.25;
+    }
+
+    .card-body p {
+        font-size: 10px;
+
+        line-height: 1.5;
+
+        margin-bottom: 12px;
+    }
+
+    .card-body a {
+        font-size: 10px;
+    }
+
+
+    /* -----------------------------------------
+       CTA
+    ----------------------------------------- */
 
     .cta-content {
-        gap: 10px;
+        gap: 12px;
     }
 
+    .cta-left h2 {
+        font-size: 22px;
+    }
+
+    .cta-left p {
+        font-size: 10px;
+    }
+
+    .cta-buttons {
+        gap: 5px;
+    }
+
+    .btn-red,
+    .btn-outline {
+        padding:
+            9px
+            10px;
+
+        font-size: 9px;
+    }
 }
 
 
 /* =========================================================
    SMALL MOBILE
-   480px
+   361px - 480px
 ========================================================= */
 
 @media (max-width: 480px) {
 
     .container {
-        width: calc(100% - 14px);
+        width: calc(100% - 20px);
     }
 
-    .stats-container {
-        width: calc(100% - 6px);
-    }
 
-    .stat-item {
-        gap: 4px;
-        padding-left: 3px;
-        padding-right: 3px;
-    }
-
-    .product-grid {
-        gap: 5px;
-    }
-
-    .product-card {
-        border-radius: 6px;
-    }
-
-    .card-body {
-        padding: 7px;
-    }
-
-    .intro-flex {
-        gap: 7px;
-    }
-
-    .catalog-btn {
-        padding-left: 9px;
-        padding-right: 9px;
-    }
-
-    .cta-content {
-        gap: 7px;
-    }
-
-    .cta-buttons {
-        gap: 5px;
-    }
-
-}
-
-
-/* =========================================================
-   VERY SMALL MOBILE
-   380px
-========================================================= */
-
-@media (max-width: 380px) {
-
-    .container {
-        width: calc(100% - 10px);
-    }
+    /* -----------------------------------------
+       STATS
+    ----------------------------------------- */
 
     .stats-container {
         width: 100%;
     }
 
     .stat-item {
-        gap: 2px;
+        gap: 3px;
 
-        padding-left: 2px;
-        padding-right: 2px;
+        padding:
+            7px
+            3px;
     }
 
     .stat-icon {
-        width: 25px;
-        height: 25px;
+        width: 27px;
+        height: 27px;
     }
 
     .stat-icon img {
-        width: 20px;
-        height: 20px;
-    }
-
-    .product-grid {
-        gap: 4px;
-    }
-
-    .card-body {
-        padding: 5px;
-    }
-
-    .intro-flex {
-        gap: 5px;
-    }
-
-    .cta-content {
-        gap: 5px;
-    }
-
-    .cta-buttons {
-        gap: 3px;
-    }
-
-}
-
-
-/* =========================================================
-   360px DEVTOOLS / SAMSUNG GALAXY
-========================================================= */
-
-@media (max-width: 360px) {
-
-    .container {
-        width: calc(100% - 8px);
-    }
-
-    .stats-container {
-        width: 100%;
-    }
-
-    .stat-item {
-        padding:
-            4px 1px;
+        width: 21px;
+        height: 21px;
     }
 
     .stat-text h2 {
@@ -1013,61 +1139,286 @@ button {
     }
 
     .stat-text p {
-        font-size: 6px;
+        font-size: 7px;
     }
 
-    .product-grid {
-        gap: 3px;
+
+    /* -----------------------------------------
+       HERO
+    ----------------------------------------- */
+
+    .products-hero {
+        height: 300px;
     }
 
-    .product-card {
-        border-radius: 4px;
+    .products-hero h1 {
+        font-size: 27px;
     }
 
-    .product-card > img {
-        height: 70px;
+    .products-hero p {
+        font-size: 11px;
     }
 
-    .card-body {
-        padding: 4px;
+
+    /* -----------------------------------------
+       INTRO
+    ----------------------------------------- */
+
+    .intro-flex {
+        gap: 8px;
     }
 
-    .product-icon {
-        margin-bottom: 5px;
+    .product-intro h2 {
+        font-size: 21px;
     }
 
-    .card-body h3 {
-        font-size: 9px;
-    }
-
-    .card-body p {
-        font-size: 6px;
-        line-height: 1.4;
-    }
-
-    .card-body a {
-        font-size: 6px;
+    .product-intro p {
+        font-size: 10px;
     }
 
     .catalog-btn {
         padding:
-            6px 7px;
+            9px
+            9px;
 
-        font-size: 7px;
+        font-size: 9px;
     }
 
-    .cta-buttons {
-        gap: 2px;
+
+    /* -----------------------------------------
+       PRODUCT GRID
+    ----------------------------------------- */
+
+    .product-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 8px;
+    }
+
+    .product-card > img {
+        height: 105px;
+    }
+
+    .card-body {
+        padding: 9px;
+    }
+
+    .product-icon {
+        width: 34px;
+        height: 34px;
+
+        margin-top: -17px;
+    }
+
+    .card-body h3 {
+        font-size: 14px;
+    }
+
+    .card-body p {
+        font-size: 9px;
+
+        line-height: 1.45;
+    }
+
+    .card-body a {
+        font-size: 9px;
+    }
+
+
+    /* -----------------------------------------
+       CTA
+    ----------------------------------------- */
+
+    .cta-content {
+        gap: 8px;
+    }
+
+    .cta-left h2 {
+        font-size: 19px;
+    }
+
+    .cta-left p {
+        font-size: 9px;
     }
 
     .btn-red,
     .btn-outline {
         padding:
-            6px 7px;
+            8px
+            8px;
 
+        font-size: 8px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   360px AND BELOW
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .container {
+        width: calc(100% - 16px);
+    }
+
+
+    /* -----------------------------------------
+       STATS
+    ----------------------------------------- */
+
+    .stat-item {
+        gap: 2px;
+
+        padding:
+            6px
+            2px;
+    }
+
+    .stat-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .stat-icon img {
+        width: 19px;
+        height: 19px;
+    }
+
+    .stat-text h2 {
+        font-size: 15px;
+    }
+
+    .stat-text h4 {
         font-size: 7px;
     }
 
+    .stat-text p {
+        font-size: 6px;
+    }
+
+
+    /* -----------------------------------------
+       HERO
+    ----------------------------------------- */
+
+    .products-hero {
+        height: 285px;
+    }
+
+    .products-hero h1 {
+        font-size: 25px;
+    }
+
+    .products-hero p {
+        font-size: 10px;
+    }
+
+
+    /* -----------------------------------------
+       INTRO
+    ----------------------------------------- */
+
+    .intro-flex {
+        gap: 6px;
+    }
+
+    .product-intro h2 {
+        font-size: 19px;
+    }
+
+    .product-intro p {
+        font-size: 9px;
+    }
+
+    .catalog-btn {
+        padding:
+            8px
+            8px;
+
+        font-size: 8px;
+    }
+
+
+    /* -----------------------------------------
+       PRODUCTS
+    ----------------------------------------- */
+
+    .product-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 7px;
+    }
+
+    .product-card {
+        border-radius: 6px;
+    }
+
+    .product-card > img {
+        height: 90px;
+    }
+
+    .card-body {
+        padding: 8px;
+    }
+
+    .product-icon {
+        width: 30px;
+        height: 30px;
+
+        margin-top: -15px;
+
+        margin-bottom: 6px;
+    }
+
+    .card-body h3 {
+        font-size: 13px;
+    }
+
+    .card-body p {
+        font-size: 8px;
+
+        line-height: 1.4;
+
+        margin-bottom: 9px;
+    }
+
+    .card-body a {
+        font-size: 8px;
+    }
+
+
+    /* -----------------------------------------
+       CTA
+    ----------------------------------------- */
+
+    .cta-content {
+        gap: 6px;
+    }
+
+    .cta-left h2 {
+        font-size: 17px;
+    }
+
+    .cta-left p {
+        font-size: 8px;
+    }
+
+    .cta-buttons {
+        gap: 3px;
+    }
+
+    .btn-red,
+    .btn-outline {
+        padding:
+            7px
+            7px;
+
+        font-size: 7px;
+    }
 }
 
 

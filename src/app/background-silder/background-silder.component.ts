@@ -15,6 +15,7 @@ export class BackgroundSilder implements OnInit {
 
   images = [
   'assets/images/background_silder_1.jpg',
+  'assets/images/background_silder_5.jpeg',
   'assets/images/background_silder_2.jpg',
   // 'assets/images/background_silder_3.jpg',
   // 'assets/images/background_silder_4.jpg',

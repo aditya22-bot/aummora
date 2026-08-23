@@ -96,17 +96,9 @@
 ========================================================= */
 
 .export-section {
-
     width: 100%;
-
-    padding-top: clamp(25px, 5vw, 80px);
-
-    padding-bottom: clamp(25px, 5vw, 80px);
-
     background: #ffffff;
-
     overflow: hidden;
-
     box-sizing: border-box;
 }
 
@@ -804,57 +796,25 @@
 @media (max-width: 480px) {
 
     .container {
-
         width: 100%;
-
         padding-left: 5px;
-
         padding-right: 5px;
     }
-
-
-    /* ===============================
-             EXPORT SECTION
-    =============================== */
-
-    .export-section {
-
-        padding-top: 18px;
-
-        padding-bottom: 18px;
-    }
-
-
     .section-title {
-
         margin-bottom: 15px;
     }
-
-
     .title-top {
-
         gap: 5px;
-
         margin-bottom: 5px;
     }
-
-
     .title-top span {
-
         font-size: 6px;
     }
-
-
     .title-top .line {
-
         width: 25px;
-
         height: 1px;
     }
-
-
     .section-title h2 {
-
         font-size: 15px;
     }
 

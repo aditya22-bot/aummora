@@ -1,17 +1,25 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { Footer } from '../footer/footer';
-import { Products } from '../products/products';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-product-categories',
-  imports: [Footer,Products],
+  imports: [Footer,CommonModule,RouterModule],
   templateUrl: './product-categories.html',
   styleUrl: './product-categories.scss',
 })
 export class ProductCategories {
   constructor(private router: Router) {}
+mobileMenuOpen = false;
 
+  toggleMenu(): void {
+  this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
+  closeMenu(): void {
+  this.mobileMenuOpen = false;
+  }
 
  categories = [
   {

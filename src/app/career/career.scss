@@ -1,9 +1,22 @@
 /* =========================================================
    GLOBAL / BASE
 ========================================================= */
+@import "bootstrap-icons/font/bootstrap-icons.css";
 
 * {
     box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 .career-hero,
@@ -40,23 +53,43 @@
     overflow: hidden;
 }
 
-/* Background */
+
+/* =========================================================
+   CAREER HERO
+========================================================= */
+
+.career-hero {
+    position: relative;
+    width: 100%;
+    min-height: 650px;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND IMAGE
+========================================================= */
 
 .career-hero-bg {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-
-    background-image: url("/assets/images/career_page_header.jpg");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-
     z-index: 0;
 }
 
-/* Background overlay */
+.career-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+}
+
+
+/* =========================================================
+   BACKGROUND OVERLAY
+========================================================= */
 
 .career-hero-bg::after {
     content: "";
@@ -69,8 +102,19 @@
         rgba(7, 35, 82, 0.55) 45%,
         rgba(7, 35, 82, 0.25) 100%
     );
+
+    z-index: 1;
 }
 
+
+/* =========================================================
+   CONTENT CARD
+========================================================= */
+
+.career-content-card {
+    position: relative;
+    z-index: 2;
+}
 
 /* Hero Content Card */
 
@@ -154,7 +198,7 @@
 ========================================================= */
 
 .why-work {
-    padding: 10px 0;
+    padding: 70px 0;
     background: #ffffff;
 }
 
@@ -964,20 +1008,20 @@
 @media (max-width: 991px) {
 
     .container {
-        padding-left: 22px;
-        padding-right: 22px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
 
-    /* Hero */
+    /* ================= HERO ================= */
 
     .career-hero {
         min-height: 520px;
     }
 
     .career-content-card {
-        width: 620px;
-        max-width: calc(100% - 44px);
+        width: min(620px, calc(100% - 40px));
+        max-width: none;
 
         margin: 0 auto;
 
@@ -989,14 +1033,14 @@
     }
 
 
-    /* Why work */
+    /* ================= WHY WORK ================= */
 
     .why-work {
-        padding: 75px 0;
+        padding: 60px 0;
     }
 
     .section-title {
-        margin-bottom: 45px;
+        margin-bottom: 40px;
     }
 
     .section-title h2 {
@@ -1006,20 +1050,24 @@
     .work-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
 
-        gap: 20px;
+        gap: 18px;
+    }
+
+    .work-card {
+        padding: 28px 20px;
     }
 
 
-    /* Career */
+    /* ================= CAREER ================= */
 
     .career-section {
-        padding: 75px 0;
+        padding: 65px 0;
     }
 
     .career-wrapper {
         grid-template-columns: 1fr;
 
-        gap: 28px;
+        gap: 24px;
     }
 
     .career-info {
@@ -1053,231 +1101,312 @@
 @media (max-width: 767px) {
 
     .container {
-        padding-left: 18px;
-        padding-right: 18px;
+        padding-left: 16px;
+        padding-right: 16px;
     }
 
 
-    /* Hero */
+    /* =====================================================
+       HERO
+    ===================================================== */
 
     .career-hero {
-        min-height: 500px;
+        min-height: 470px;
 
         align-items: center;
     }
 
     .career-hero-bg {
-        background-position: 60% center;
+        background-position: center center;
     }
 
     .career-hero-bg::after {
-        background: rgba(5, 27, 65, 0.68);
+        background: linear-gradient(
+            90deg,
+            rgba(5, 27, 65, 0.80) 0%,
+            rgba(5, 27, 65, 0.60) 100%
+        );
     }
 
     .career-content-card {
-        width: calc(100% - 36px);
+        width: calc(100% - 32px);
         max-width: none;
 
         min-height: auto;
 
         margin: 0 auto;
 
-        padding: 50px 25px;
+        padding: 40px 25px;
     }
 
     .career-content-card .company-name {
         font-size: 12px;
 
-        margin-bottom: 16px;
+        margin-bottom: 14px;
     }
 
     .career-content-card h1 {
-        font-size: 38px;
+        font-size: clamp(32px, 8vw, 40px);
+
+        line-height: 1.1;
 
         letter-spacing: -0.5px;
     }
 
     .career-content-card .hero-line {
-        width: 60px;
+        width: 55px;
 
-        margin: 22px 0;
+        margin: 20px 0;
     }
 
     .career-content-card p {
-        font-size: 15px;
+        font-size: 14px;
 
-        line-height: 1.7;
+        line-height: 1.65;
     }
 
 
-    /* Why Work */
+    /* =====================================================
+       WHY WORK
+    ===================================================== */
 
     .why-work {
-        padding: 60px 0;
+        padding: 45px 0;
     }
 
     .section-title {
-        margin-bottom: 38px;
+        margin-bottom: 28px;
     }
 
     .section-title span {
-        font-size: 12px;
+        font-size: 11px;
+
+        letter-spacing: 1.2px;
     }
 
     .section-title h2 {
-        font-size: 30px;
+        font-size: clamp(25px, 6vw, 30px);
 
-        margin-bottom: 14px;
+        line-height: 1.2;
+
+        margin-bottom: 12px;
     }
 
     .section-title p {
-        font-size: 14px;
+        font-size: 13px;
 
-        line-height: 1.75;
+        line-height: 1.65;
     }
 
+
+    /* =====================================================
+       IMPORTANT:
+       TWO CARDS PER ROW ON MOBILE
+    ===================================================== */
+
     .work-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 14px;
+    }
+
+    .work-card {
+        padding: 22px 12px;
+
+        border-radius: 12px;
+    }
+
+    .work-icon {
+        width: 62px;
+        height: 62px;
+
+        margin-bottom: 12px;
+    }
+
+    .work-icon img {
+        width: 52px;
+        height: 52px;
+    }
+
+    .work-card h3 {
+        font-size: 15px;
+
+        line-height: 1.3;
+
+        margin-bottom: 7px;
+    }
+
+    .work-card p {
+        font-size: 12px;
+
+        line-height: 1.5;
+    }
+
+
+    /* =====================================================
+       CAREER SECTION
+    ===================================================== */
+
+    .career-section {
+        padding: 45px 0;
+    }
+
+    .career-wrapper {
         grid-template-columns: 1fr;
 
         gap: 18px;
     }
 
-    .work-card {
-        padding: 28px 22px;
-    }
-
-    .work-icon {
-        width: 76px;
-        height: 76px;
-
-        margin-bottom: 17px;
-    }
-
-    .work-icon img {
-        width: 62px;
-        height: 62px;
-    }
-
-    .work-card h3 {
-        font-size: 18px;
-    }
-
-    .work-card p {
-        font-size: 14px;
-    }
-
-
-    /* Career Section */
-
-    .career-section {
-        padding: 60px 0;
-    }
-
-    .career-wrapper {
-        gap: 22px;
-    }
-
     .career-info {
-        padding: 35px 25px;
+        padding: 30px 22px;
 
         border-radius: 12px;
     }
 
     .career-info h2 {
-        font-size: 30px;
+        font-size: clamp(25px, 6vw, 30px);
+
+        line-height: 1.2;
     }
 
     .intro {
-        font-size: 14px;
+        font-size: 13px;
 
-        line-height: 1.75;
+        line-height: 1.65;
+
+        margin-bottom: 25px;
     }
 
+
+    /* =====================================================
+       FEATURES
+    ===================================================== */
+
     .feature-list {
-        gap: 24px;
+        gap: 20px;
     }
 
     .feature-item {
-        gap: 14px;
+        gap: 12px;
     }
 
     .feature-icon {
-        width: 56px;
-        height: 56px;
-        min-width: 56px;
+        width: 52px;
+        height: 52px;
+
+        min-width: 52px;
     }
 
     .feature-item h4 {
-        font-size: 16px;
+        font-size: 15px;
+
+        margin-bottom: 4px;
     }
 
     .feature-item p {
-        font-size: 13px;
+        font-size: 12px;
+
+        line-height: 1.5;
     }
 
 
-    /* Form */
+    /* =====================================================
+       FORM
+    ===================================================== */
 
     .career-form-card {
-        padding: 28px 22px;
+        padding: 24px 18px;
 
         border-radius: 12px;
     }
 
     .career-form-card h2 {
-        font-size: 28px;
+        font-size: 25px;
 
-        margin-bottom: 24px;
+        margin-bottom: 20px;
     }
 
-    .form-grid {
-        grid-template-columns: 1fr;
 
-        gap: 15px;
+    /*
+       KEEP FORM IN TWO COLUMNS
+       This makes the mobile layout more compact.
+    */
+
+    .form-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
     }
 
     .form-grid input,
     .form-grid select {
-        height: 50px;
+        height: 48px;
 
-        font-size: 14px;
+        padding: 0 10px;
+
+        font-size: 12px;
     }
 
     .career-form-card textarea {
-        min-height: 125px;
+        min-height: 110px;
+
+        margin-top: 14px;
+
+        padding: 12px;
+
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       UPLOAD
+    ===================================================== */
+
+    .upload-title {
+        margin: 20px 0 10px;
 
         font-size: 14px;
     }
 
     .upload-box {
-        padding: 28px 18px;
+        padding: 22px 12px;
     }
 
     .upload-box i {
-        font-size: 36px;
+        font-size: 32px;
     }
 
     .upload-box h4 {
-        font-size: 17px;
+        font-size: 15px;
     }
 
     .upload-box span,
     .upload-box p {
-        font-size: 13px;
+        font-size: 12px;
     }
 
+
+    /* =====================================================
+       CHECKBOX
+    ===================================================== */
+
     .checkbox {
-        margin: 22px 0;
+        margin: 18px 0;
     }
 
     .checkbox label {
-        font-size: 13px;
+        font-size: 12px;
     }
 
-    .submit-btn {
-        height: 52px;
 
-        font-size: 15px;
+    /* =====================================================
+       BUTTON
+    ===================================================== */
+
+    .submit-btn {
+        height: 50px;
+
+        font-size: 14px;
     }
 
 }
@@ -1291,160 +1420,23 @@
 @media (max-width: 575px) {
 
     .container {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 14px;
+        padding-right: 14px;
     }
 
 
-    /* Hero */
+    /* =====================================================
+       HERO
+    ===================================================== */
 
     .career-hero {
-        min-height: 460px;
-    }
-
-    .career-content-card {
-        width: calc(100% - 30px);
-
-        padding: 42px 22px;
-    }
-
-    .career-content-card h1 {
-        font-size: 32px;
-
-        line-height: 1.12;
-    }
-
-    .career-content-card p {
-        font-size: 14px;
-    }
-
-
-    /* Section Titles */
-
-    .section-title h2 {
-        font-size: 26px;
-    }
-
-    .section-title p {
-        font-size: 13px;
-    }
-
-
-    /* Cards */
-
-    .work-card {
-        padding: 25px 18px;
-    }
-
-    .work-icon {
-        width: 72px;
-        height: 72px;
-    }
-
-    .work-icon img {
-        width: 58px;
-        height: 58px;
-    }
-
-    .work-card h3 {
-        font-size: 17px;
-    }
-
-    .work-card p {
-        font-size: 13px;
-    }
-
-
-    /* Career info */
-
-    .career-info {
-        padding: 30px 20px;
-    }
-
-    .career-info h2 {
-        font-size: 26px;
-    }
-
-    .feature-item {
-        gap: 12px;
-    }
-
-    .feature-icon {
-        width: 52px;
-        height: 52px;
-        min-width: 52px;
-    }
-
-    .feature-item h4 {
-        font-size: 15px;
-    }
-
-    .feature-item p {
-        font-size: 13px;
-    }
-
-
-    /* Form */
-
-    .career-form-card {
-        padding: 24px 17px;
-    }
-
-    .career-form-card h2 {
-        font-size: 25px;
-    }
-
-    .form-grid input,
-    .form-grid select {
-        height: 48px;
-
-        padding: 0 13px;
-
-        font-size: 13px;
-    }
-
-    .career-form-card textarea {
-        padding: 13px;
-
-        font-size: 13px;
-    }
-
-    .upload-box {
-        padding: 24px 12px;
-    }
-
-    .upload-box i {
-        font-size: 33px;
-    }
-
-    .upload-box h4 {
-        font-size: 16px;
-    }
-
-    .submit-btn {
-        height: 50px;
-
-        font-size: 14px;
-    }
-
-}
-
-
-/* =========================================================
-   VERY SMALL PHONES
-   Below 400px
-========================================================= */
-
-@media (max-width: 399px) {
-
-    .career-hero {
-        min-height: 430px;
+        min-height: 450px;
     }
 
     .career-content-card {
         width: calc(100% - 24px);
 
-        padding: 35px 18px;
+        padding: 35px 20px;
     }
 
     .career-content-card .company-name {
@@ -1452,7 +1444,9 @@
     }
 
     .career-content-card h1 {
-        font-size: 28px;
+        font-size: clamp(29px, 8vw, 34px);
+
+        line-height: 1.12;
     }
 
     .career-content-card p {
@@ -1460,13 +1454,20 @@
     }
 
 
-    .why-work,
-    .career-section {
-        padding: 50px 0;
+    /* =====================================================
+       WHY WORK
+    ===================================================== */
+
+    .why-work {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        margin-bottom: 25px;
     }
 
     .section-title h2 {
-        font-size: 23px;
+        font-size: 26px;
     }
 
     .section-title p {
@@ -1474,47 +1475,418 @@
     }
 
 
+    /*
+       TWO COLUMNS
+       Even on 412px / 390px / 375px
+    */
+
+    .work-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+    .work-card {
+        padding: 20px 10px;
+
+        border-radius: 11px;
+    }
+
+    .work-icon {
+        width: 58px;
+        height: 58px;
+
+        margin-bottom: 10px;
+    }
+
+    .work-icon img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .work-card h3 {
+        font-size: 14px;
+
+        line-height: 1.3;
+    }
+
+    .work-card p {
+        font-size: 11.5px;
+
+        line-height: 1.45;
+    }
+
+
+    /* =====================================================
+       CAREER INFO
+    ===================================================== */
+
     .career-info {
-        padding: 26px 17px;
+        padding: 27px 18px;
     }
 
     .career-info h2 {
-        font-size: 23px;
+        font-size: 25px;
+    }
+
+    .intro {
+        font-size: 12.5px;
+    }
+
+
+    /* =====================================================
+       FEATURE
+    ===================================================== */
+
+    .feature-list {
+        gap: 18px;
     }
 
     .feature-item {
-        flex-direction: column;
-
-        align-items: center;
-
-        text-align: center;
+        gap: 11px;
     }
 
     .feature-icon {
-        width: 58px;
-        height: 58px;
-        min-width: 58px;
+        width: 50px;
+        height: 50px;
+
+        min-width: 50px;
+    }
+
+    .feature-item h4 {
+        font-size: 14px;
+    }
+
+    .feature-item p {
+        font-size: 11.5px;
     }
 
 
+    /* =====================================================
+       FORM
+    ===================================================== */
+
     .career-form-card {
-        padding: 21px 14px;
+        padding: 22px 14px;
     }
 
     .career-form-card h2 {
-        font-size: 23px;
+        font-size: 24px;
+    }
+
+    .form-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+    .form-grid input,
+    .form-grid select {
+        height: 46px;
+
+        padding: 0 8px;
+
+        font-size: 11.5px;
+    }
+
+    .career-form-card textarea {
+        min-height: 105px;
+
+        font-size: 12px;
     }
 
     .upload-box {
-        padding: 21px 10px;
+        padding: 20px 10px;
     }
 
-    .checkbox {
-        gap: 8px;
+    .upload-box i {
+        font-size: 30px;
+    }
+
+    .upload-box h4 {
+        font-size: 15px;
+    }
+
+    .upload-box span,
+    .upload-box p {
+        font-size: 11.5px;
     }
 
     .checkbox label {
+        font-size: 11.5px;
+    }
+
+    .submit-btn {
+        height: 48px;
+
+        font-size: 13.5px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   BELOW 400px
+========================================================= */
+
+@media (max-width: 399px) {
+
+    .container {
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .career-hero {
+        min-height: 425px;
+    }
+
+    .career-content-card {
+        width: calc(100% - 20px);
+
+        padding: 31px 17px;
+    }
+
+    .career-content-card .company-name {
+        font-size: 10px;
+
+        margin-bottom: 12px;
+    }
+
+    .career-content-card h1 {
+        font-size: 27px;
+
+        line-height: 1.12;
+    }
+
+    .career-content-card .hero-line {
+        width: 50px;
+
+        margin: 17px 0;
+    }
+
+    .career-content-card p {
         font-size: 12px;
+
+        line-height: 1.6;
+    }
+
+
+    /* =====================================================
+       WHY WORK
+    ===================================================== */
+
+    .why-work {
+        padding: 36px 0;
+    }
+
+    .section-title {
+        margin-bottom: 22px;
+    }
+
+    .section-title span {
+        font-size: 10px;
+    }
+
+    .section-title h2 {
+        font-size: 23px;
+    }
+
+    .section-title p {
+        font-size: 12px;
+    }
+
+
+    /* =====================================================
+       TWO COLUMNS
+    ===================================================== */
+
+    .work-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+    .work-card {
+        padding: 18px 7px;
+
+        border-radius: 10px;
+    }
+
+    .work-icon {
+        width: 54px;
+        height: 54px;
+
+        margin-bottom: 9px;
+    }
+
+    .work-icon img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .work-card h3 {
+        font-size: 13px;
+
+        line-height: 1.25;
+
+        margin-bottom: 6px;
+    }
+
+    .work-card p {
+        font-size: 10.5px;
+
+        line-height: 1.4;
+    }
+
+
+    /* =====================================================
+       CAREER INFO
+    ===================================================== */
+
+    .career-section {
+        padding: 40px 0;
+    }
+
+    .career-info {
+        padding: 24px 15px;
+    }
+
+    .career-info h2 {
+        font-size: 22px;
+    }
+
+    .intro {
+        font-size: 12px;
+
+        line-height: 1.6;
+    }
+
+
+    /* =====================================================
+       FEATURES
+    ===================================================== */
+
+    .feature-list {
+        gap: 17px;
+    }
+
+    .feature-item {
+        gap: 9px;
+    }
+
+    .feature-icon {
+        width: 48px;
+        height: 48px;
+
+        min-width: 48px;
+    }
+
+    .feature-item h4 {
+        font-size: 13.5px;
+    }
+
+    .feature-item p {
+        font-size: 11px;
+
+        line-height: 1.4;
+    }
+
+
+    /* =====================================================
+       FORM
+    ===================================================== */
+
+    .career-form-card {
+        padding: 20px 11px;
+    }
+
+    .career-form-card h2 {
+        font-size: 22px;
+
+        margin-bottom: 18px;
+    }
+
+    .form-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 8px;
+    }
+
+    .form-grid input,
+    .form-grid select {
+        height: 44px;
+
+        padding: 0 7px;
+
+        font-size: 10.5px;
+
+        border-radius: 7px;
+    }
+
+    .career-form-card textarea {
+        min-height: 100px;
+
+        margin-top: 12px;
+
+        padding: 10px;
+
+        font-size: 11.5px;
+    }
+
+    .upload-title {
+        margin: 18px 0 8px;
+
+        font-size: 13px;
+    }
+
+    .upload-box {
+        padding: 19px 8px;
+
+        border-radius: 10px;
+    }
+
+    .upload-box i {
+        font-size: 28px;
+
+        margin-bottom: 9px;
+    }
+
+    .upload-box h4 {
+        font-size: 14px;
+    }
+
+    .upload-box span,
+    .upload-box p {
+        font-size: 10.5px;
+    }
+
+    .checkbox {
+        gap: 7px;
+
+        margin: 16px 0;
+    }
+
+    .checkbox input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+
+        min-width: 16px;
+    }
+
+    .checkbox label {
+        font-size: 10.5px;
+    }
+
+    .submit-btn {
+        height: 46px;
+
+        font-size: 12.5px;
     }
 
 }
@@ -1522,35 +1894,109 @@
 
 /* =========================================================
    EXTRA SMALL DEVICES
-   Below 320px
+   BELOW 320px
 ========================================================= */
 
 @media (max-width: 319px) {
 
-    .career-content-card h1 {
-        font-size: 25px;
+    .container {
+        padding-left: 9px;
+        padding-right: 9px;
     }
+
+
+    /* HERO */
+
+    .career-content-card {
+        width: calc(100% - 16px);
+
+        padding: 28px 14px;
+    }
+
+    .career-content-card h1 {
+        font-size: 24px;
+    }
+
+    .career-content-card p {
+        font-size: 11px;
+    }
+
+
+    /* WHY WORK */
 
     .section-title h2 {
         font-size: 21px;
     }
 
+    .section-title p {
+        font-size: 11px;
+    }
+
+    .work-grid {
+        gap: 8px;
+    }
+
+    .work-card {
+        padding: 16px 5px;
+    }
+
+    .work-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .work-icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .work-card h3 {
+        font-size: 12px;
+    }
+
+    .work-card p {
+        font-size: 10px;
+    }
+
+
+    /* CAREER */
+
+    .career-info {
+        padding: 22px 12px;
+    }
+
     .career-info h2 {
-        font-size: 21px;
+        font-size: 20px;
+    }
+
+
+    /* FORM */
+
+    .career-form-card {
+        padding: 18px 9px;
     }
 
     .career-form-card h2 {
-        font-size: 21px;
+        font-size: 20px;
     }
 
-    .career-form-card {
-        padding: 18px 12px;
+    .form-grid {
+        gap: 7px;
+    }
+
+    .form-grid input,
+    .form-grid select {
+        height: 42px;
+
+        font-size: 9.5px;
+
+        padding: 0 6px;
     }
 
     .submit-btn {
-        height: 46px;
+        height: 44px;
 
-        font-size: 13px;
+        font-size: 12px;
     }
 
 }
