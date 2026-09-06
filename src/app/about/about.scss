@@ -830,25 +830,17 @@ button {
 ========================================================= */
 
 .cta-section {
-
   width: 100%;
-
   background:
     linear-gradient(
       rgba(5, 18, 59, 0.93),
       rgba(5, 18, 59, 0.93)
     ),
     url("/assets/images/global-map.png");
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   color: #fff;
-
-  padding:
-    clamp(35px, 6vw, 70px)
-    0;
 }
 
 .cta-container {

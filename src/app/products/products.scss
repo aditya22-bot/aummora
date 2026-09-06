@@ -21,7 +21,9 @@ body {
     overflow-x: hidden;
     font-family: inherit;
 }
-
+.aumoora-fotter{
+    border-top: 2px solid rgba(255, 255, 255, 0.14);
+}
 img {
     display: block;
     max-width: 100%;
@@ -600,26 +602,25 @@ button {
 ========================================================= */
 
 .product-cta {
-    width: 100%;
+    border-top: 5px solid rgba(255, 255, 255, 0.14);
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
     overflow: hidden;
 }
 
 .cta-box {
     position: relative;
-
     width: 100%;
-
-    background-image:
-        url('/assets/images/page3.jpg');
-
+    // background-image:
+    //     url('/assets/images/page3.jpg');
+    
+    background-color: #071D56;
     background-size: cover;
-
     background-position: center;
-
-    border-radius:
-        clamp(8px, 1vw, 14px);
-
-    overflow: hidden;
+    border-radius:clamp(8px, 1vw, 14px);
 }
 
 .cta-overlay {
@@ -698,7 +699,12 @@ button {
         clamp(10px, 1.15vw, 16px);
 }
 
-
+.product-cta > .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
 /* =========================================================
    CTA BUTTONS
 ========================================================= */

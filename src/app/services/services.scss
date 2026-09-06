@@ -683,110 +683,210 @@ button {
 
 /* =========================================================
    SERVICES CTA
+   COMPACT FULL-WIDTH CTA
 ========================================================= */
 
 .services-cta {
     position: relative;
+
     width: 100%;
-    margin-top: clamp(25px, 4vw, 40px);
-    padding:
-        clamp(55px, 7vw, 90px)
-        0;
-    background-image:
-        url('/assets/images/services-cta.jpg');
+    max-width: 100%;
+
+    margin-top: clamp(20px, 3vw, 30px);
+
+    /* MUCH SMALLER HEIGHT */
+    padding: clamp(22px, 2.5vw, 32px) 0;
+
+    // background-image: url('/assets/images/services-cta.jpg');
+    background-color: #071D56;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
     overflow: hidden;
+
+    box-sizing: border-box;
 }
 
-.cta-overlay {
+
+/* =========================================================
+   BLUE / DARK OVERLAY
+========================================================= */
+
+.services-cta .cta-overlay {
     position: absolute;
+
     inset: 0;
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(8, 60, 181, 0.95) 0%,
-            rgba(8, 28, 74, 0.85) 50%,
-            rgba(8, 28, 74, 0.55) 100%
-        );
+    // background: linear-gradient(
+    //     90deg,
+    //     rgba(8, 38, 105, 0.98) 0%,
+    //     rgba(8, 32, 80, 0.94) 45%,
+    //     rgba(55, 65, 95, 0.78) 100%
+    // );
 
     z-index: 1;
 }
 
-.cta-content {
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.services-cta > .container {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0;
+
+    padding-left: clamp(20px, 2.8vw, 35px);
+    padding-right: clamp(20px, 2.8vw, 35px);
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CTA CONTENT
+========================================================= */
+
+.services-cta .cta-content {
     position: relative;
+
     z-index: 2;
+
     width: 100%;
+
     display: flex;
+
+    align-items: center;
+
     justify-content: space-between;
-    align-items: center;
-    gap: clamp(25px, 5vw, 60px);
+
+    gap: clamp(20px, 4vw, 60px);
+
+    box-sizing: border-box;
 }
 
-.cta-text {
-    width: 100%;
-    max-width: 650px;
+
+/* =========================================================
+   LEFT TEXT
+========================================================= */
+
+.services-cta .cta-text {
+    flex: 1 1 auto;
+
+    min-width: 0;
+
+    width: auto;
+
+    max-width: 800px;
+
     color: #fff;
 }
-.cta-subtitle {
-    display: inline-block;
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.services-cta .cta-subtitle {
+    display: block;
+
+    margin: 0;
+
     color: #ff5252;
+
     font-size: clamp(11px, 1vw, 14px);
+
     font-weight: 700;
-    letter-spacing: 1.5px;
+
+    letter-spacing: 1.2px;
+
+    line-height: 1.2;
 }
 
-.cta-text h2 {
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.services-cta .cta-text h2 {
     margin:
-        clamp(10px, 1.5vw, 15px)
-        0;
+        clamp(6px, 0.7vw, 10px)
+        0
+        clamp(7px, 0.8vw, 12px);
 
     color: #fff;
 
-    font-size: clamp(28px, 3.5vw, 44px);
-    line-height: 1.2;
+    font-size: clamp(25px, 3vw, 42px);
+
+    line-height: 1.15;
+
     font-weight: 700;
 }
 
-.cta-text p {
-    color: #d7d7d7;
 
-    font-size: clamp(13px, 1.2vw, 16px);
-    line-height: 1.75;
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.services-cta .cta-text p {
+    margin: 0;
+
+    max-width: 760px;
+
+    color: #e0e4eb;
+
+    font-size: clamp(11px, 1.05vw, 15px);
+
+    line-height: 1.5;
 }
 
-.cta-buttons {
-    flex-shrink: 0;
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.services-cta .cta-buttons {
+    flex: 0 0 auto;
 
     display: flex;
 
     align-items: center;
 
-    gap: clamp(10px, 1.5vw, 18px);
+    justify-content: flex-end;
 
-    flex-wrap: wrap;
+    gap: clamp(8px, 1.2vw, 16px);
+
+    flex-wrap: nowrap;
 }
 
-.btn-primary,
-.btn-secondary {
+
+/* =========================================================
+   BUTTON COMMON
+========================================================= */
+
+.services-cta .btn-primary,
+.services-cta .btn-secondary {
+
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
-    gap: 10px;
+    gap: 8px;
 
-    min-height: 48px;
+    min-height: clamp(42px, 3.5vw, 50px);
 
     padding:
-        clamp(11px, 1.2vw, 16px)
-        clamp(20px, 2.5vw, 30px);
+        0
+        clamp(18px, 1.8vw, 28px);
 
     border-radius: 8px;
 
-    font-size: clamp(12px, 1vw, 15px);
+    font-size: clamp(11px, 1vw, 15px);
 
     font-weight: 600;
 
@@ -794,36 +894,187 @@ button {
 
     white-space: nowrap;
 
+    box-sizing: border-box;
+
     transition:
         background 0.3s ease,
         color 0.3s ease,
+        border-color 0.3s ease,
         transform 0.3s ease;
 }
 
-.btn-primary {
-    background: #e53935;
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.services-cta .btn-primary {
+    background: #ed3b38;
 
     color: #fff;
+
+    border: 1px solid #ed3b38;
 }
 
-.btn-primary:hover {
-    background: #c62828;
+.services-cta .btn-primary:hover {
+    background: #c92e2b;
 
-    transform: translateY(-3px);
+    border-color: #c92e2b;
+
+    transform: translateY(-2px);
 }
 
-.btn-secondary {
-    background: transparent;
 
-    border: 2px solid rgba(255, 255, 255, 0.8);
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
 
-    color: #fff;
-}
-
-.btn-secondary:hover {
+.services-cta .btn-secondary {
     background: #fff;
 
     color: #0b2b63;
+
+    border: 1px solid #fff;
+}
+
+.services-cta .btn-secondary:hover {
+    background: transparent;
+
+    color: #fff;
+
+    border-color: #fff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   1200px AND BELOW
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .services-cta > .container {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .services-cta .cta-content {
+        gap: 25px;
+    }
+
+    .services-cta .cta-text {
+        max-width: 680px;
+    }
+}
+
+
+/* =========================================================
+   950px AND BELOW
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .services-cta {
+        padding: 25px 0;
+    }
+
+    .services-cta > .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .services-cta .cta-content {
+        gap: 20px;
+    }
+
+    .services-cta .cta-text h2 {
+        font-size: 30px;
+    }
+
+    .services-cta .cta-text p {
+        font-size: 12px;
+    }
+
+    .services-cta .btn-primary,
+    .services-cta .btn-secondary {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 750px) {
+
+    .services-cta {
+        padding: 30px 0;
+    }
+
+    .services-cta .cta-content {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .services-cta .cta-text {
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+    .services-cta .cta-buttons {
+        width: 100%;
+
+        justify-content: flex-start;
+
+        flex-wrap: wrap;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .services-cta {
+        padding: 25px 0;
+    }
+
+    .services-cta > .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .services-cta .cta-text h2 {
+        font-size: 26px;
+    }
+
+    .services-cta .cta-text p {
+        font-size: 12px;
+
+        line-height: 1.5;
+    }
+
+    .services-cta .cta-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .services-cta .btn-primary,
+    .services-cta .btn-secondary {
+        width: 100%;
+
+        min-height: 44px;
+    }
 }
 
 
@@ -1628,4 +1879,8 @@ button {
         transition: none !important;
         animation: none !important;
     }
+}
+
+.aumoora-fotter{
+    border-top: 2px solid rgba(255, 255, 255, 0.14);
 }
